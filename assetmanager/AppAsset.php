@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace app\api\assetmanager;
+namespace app\assetmanager;
 
 use yii\web\AssetBundle;
 
@@ -20,13 +20,17 @@ class AppAsset extends AssetBundle
     public $css = [
         'css/site.min.css',
     ];
+
     public $js = [
+        'js/app.js',
     ];
+
     public $depends = [
         'yii\web\YiiAsset',
         //'yii\jui\JuiAsset',
         //'yii\bootstrap\BootstrapAsset',
         'yii\bootstrap\BootstrapPluginAsset',
         //'\rmrevin\yii\fontawesome\AssetBundle'
+        'app\assetmanager\AngularAsset'
     ];
 }
