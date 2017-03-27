@@ -1,0 +1,22 @@
+{
+  "name": "yii2rest",
+  "homepage": "https://github.com/fatelord/yii2rest",
+  "authors": [
+    "Sammy B <barsamms@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.3",
+    "bootstrap": "^3.3.7"
+  }
+}
