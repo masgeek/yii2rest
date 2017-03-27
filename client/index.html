@@ -1,15 +1,64 @@
-<!doctype html>
+<!DOCTYPE html>
 <html ng-app="demo">
 <head>
     <title>Hello AngularJS</title>
+    <script src="../vendor/bower/bootstrap/dist/css/bootstrap.css"></script>
+
+    <script src="../vendor/bower/jquery/dist/jquery.js"></script>
     <script src="../vendor/bower/angular/angular.min.js"></script>
+    <script src="../vendor/bower/bootstrap/dist/js/bootstrap.js"></script>
+
+<!--
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+-->
+
     <script src="app.js"></script>
 </head>
 
 <body>
 <div ng-controller="Hello">
-    <p>The ID is {{greeting.id}}</p>
-    <p>The content is {{greeting.content}}</p>
+    <table class="table">
+        <tr ng-repeat="product in products">
+            <td>{{product.id}}</td>
+            <!--<td>
+                <li ng-repeat="item in product.expenselist">
+                    {{item.text}}
+                </li>
+            </td>-->
+            <!--<td>
+                <li ng-repeat="item in product.expenselist">
+                    {{item.value}}
+                </li>
+            </td>-->
+            <td>{{product.name}}</td>
+            <!--
+                       <td>
+                           <li ng-repeat="item in product.sharelist">
+                               {{item.text}}
+                           </li>
+                       </td>
+                       -->
+            <td>{{product.name}}</td>
+            <td>{{product.sku}}</td>
+        </tr>
+    </table>
 </div>
 </body>
+
+<style>
+    .header,
+    .items {
+        border-bottom: 1px solid #000;
+        width: 600px;
+    }
+
+    .header span,
+    .items span {
+        display: inline-block;
+        width: 120px;
+        border-right: 1px solid #000;
+        padding: 5px;
+    }
+</style>
 </html>
