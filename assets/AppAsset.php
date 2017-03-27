@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace app\assetmanager;
+namespace app\assets;
 
 use yii\web\AssetBundle;
 
@@ -27,6 +27,6 @@ class AppAsset extends AssetBundle
         //'yii\jui\JuiAsset',
         //'yii\bootstrap\BootstrapAsset',
         'yii\bootstrap\BootstrapPluginAsset',
-        '\rmrevin\yii\fontawesome\AssetBundle'
+        //'\rmrevin\yii\fontawesome\AssetBundle'
     ];
 }
