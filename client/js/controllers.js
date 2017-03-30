@@ -25,7 +25,7 @@ angular.module('app.controllers', []).controller('ProductListController', functi
     };
 }).controller('ProductEditController', function ($scope, $state, $stateParams, Product) {
     $scope.updateProduct = function () { //Update the edited movie. Issues a PUT to /api/products/:id
-        $scope.movie.$update(function () {
+        $scope.product.$update(function () {
             $state.go('products'); // on success go back to home i.e. products state.
         });
     };

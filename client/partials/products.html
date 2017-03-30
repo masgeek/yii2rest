@@ -1,15 +1,15 @@
 <a ui-sref="newProduct" class="btn-primary btn-lg nodecoration">Add New Movie</a>
 
-<table class="table movietable">
+<table class="table productTable table-bordered">
     <tr>
-        <td><h3>All Movies</h3></td>
+        <td><h3>All Products</h3></td>
         <td></td>
     </tr>
-    <!--<tr ng-repeat="movie in products">
-        <td>{{movie.id}}</td>
+    <tr ng-repeat="product in products">
+        <td>{{product.product_name}}</td>
         <td>
-            <a class="btn btn-primary" ui-sref="viewMovie({id:movie._id})">View</a>
-            <a class="btn btn-danger"  ng-click="deleteProduct(movie)">Delete</a>
+            <a class="btn btn-primary" ui-sref="viewProduct({id:product.id})">View</a>
+            <a class="btn btn-danger"  ng-click="deleteProduct(product)">Delete</a>
         </td>
-    </tr>-->
+    </tr>
 </table>
