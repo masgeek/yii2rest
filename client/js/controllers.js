@@ -41,5 +41,8 @@ app.controller('ProductEditController', function ($scope, $state, $stateParams, 
         $scope.product = Product.get({id: $stateParams.id});
     };
 
+    var $t = Product.get({id: $stateParams.id});
     $scope.loadProduct(); // Load a movie which can be edited on UI
+
+    console.log($t);
 });
