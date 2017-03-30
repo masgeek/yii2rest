@@ -28,4 +28,14 @@ class ProductController extends ActiveController
 
         return $data->count;
     }
+    public function actionQuery()
+    {
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+        $data =  new ActiveDataProvider([
+            'query' => PRODUCTS::find(),
+        ]);
+
+        return $data->count;
+    }
 }

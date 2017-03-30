@@ -58,9 +58,6 @@ $config = [
                         'v1/country',
                         'v1/citizen',
                         'v1/product',
-                        //'v1/citizen/query',
-                        //'v1/project',
-                        //'v1/time'
                     ],
                     'tokens' => [
                         '{id}' => '<id:\\w+>',

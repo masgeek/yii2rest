@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="demo">
+<html ng-app="app">
 <head>
     <title>Hello AngularJS</title>
 
@@ -7,29 +7,32 @@
     <link rel="stylesheet" href="../vendor/bower/bootstrap/dist/css/bootstrap.min.css"/>
     <script src="../vendor/bower/jquery/dist/jquery.js"></script>
     <script src="../vendor/bower/angular/angular.min.js"></script>
+    <script src="../vendor/bower/angular-route/angular-route.min.js"></script>
+    <script src="../vendor/bower/angular-resource/angular-resource.min.js"></script>
+    <script src="../vendor/bower/angular-strap/dist/angular-strap.min.js"></script>
     <script src="../vendor/bower/bootstrap/dist/js/bootstrap.js"></script>
 
-<!--
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
--->
+    <!--
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    -->
 
     <script src="app.js"></script>
 </head>
 
 <body>
-<div ng-controller="Hello">
+<div ng-controller="Product">
     <table class="table table-bordered table-condensed table-hover">
         <thead>
         <tr>
             <th>#</th>
             <th>Product Name</th>
-            <th>SKU</th>
-            <th>Price</th>
+            <th>Warehouse</th>
+            <th>Country</th>
         </tr>
         </thead>
         <tr ng-repeat="product in products">
-            <td>{{product.productid}}</td>
+            <td>{{product.id}}</td>
             <!--<td>
                 <li ng-repeat="item in product.expenselist">
                     {{item.text}}
@@ -40,7 +43,7 @@
                     {{item.value}}
                 </li>
             </td>-->
-            <td>{{product.name}}</td>
+            <td>{{product.product_name}}</td>
             <!--
                        <td>
                            <li ng-repeat="item in product.sharelist">
@@ -48,8 +51,8 @@
                            </li>
                        </td>
                        -->
-            <td>{{product.sku}}</td>
-            <td>{{product.buyitnow}}</td>
+            <td>{{product.warehouse}}</td>
+            <td>{{product.country}}</td>
         </tr>
     </table>
 </div>
