@@ -19,6 +19,7 @@
     "angular": "^1.6.3",
     "angular-route": "^1.6.3",
     "angular-strap": "^2.3.12",
-    "angular-resource": "^1.6.3"
+    "angular-resource": "^1.6.3",
+    "angular-ui-router": "^0.4.2"
   }
 }
