@@ -34,8 +34,9 @@ class ProductController extends ActiveController
 
         $data =  new ActiveDataProvider([
             'query' => PRODUCTS::find(),
+            'pagination'=>false
         ]);
 
-        return $data->count;
+        return $data;//->count;
     }
 }
