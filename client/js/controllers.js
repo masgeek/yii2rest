@@ -3,7 +3,9 @@
  */
 'use strict'
 
-angular.module('app.controllers', []).controller('ProductListController', function ($scope, $state, popupService, $window, Product) {
+var app = angular.module('app.controllers', []);
+
+app.controller('ProductListController', function ($scope, $state, popupService, $window, Product) {
     $scope.products = Product.query(); //fetch all products. Issues a GET to /api/products
 
     $scope.deleteMovie = function (product) { // Delete a movie. Issues a DELETE to /api/products/:id
@@ -13,9 +15,12 @@ angular.module('app.controllers', []).controller('ProductListController', functi
             });
         }
     };
-}).controller('ProductViewController', function ($scope, $stateParams, Product) {
+});
+
+app.controller('ProductViewController', function ($scope, $stateParams, Product) {
     $scope.product = Product.get({id: $stateParams.id}); //Get a single product. Issues a GET to /api/products/:id
-}).controller('ProductCreateController', function ($scope, $state, $stateParams, Product) {
+});
+app.controller('ProductCreateController', function ($scope, $state, $stateParams, Product) {
     $scope.product = new Product();  //create new product instance. Properties will be set via ng-model on UI
 
     $scope.addProduct = function () { //create a new movie. Issues a POST to /api/products
@@ -23,7 +28,9 @@ angular.module('app.controllers', []).controller('ProductListController', functi
             $state.go('products'); // on success go back to home i.e. products state.
         });
     };
-}).controller('ProductEditController', function ($scope, $state, $stateParams, Product) {
+});
+
+app.controller('ProductEditController', function ($scope, $state, $stateParams, Product) {
     $scope.updateProduct = function () { //Update the edited movie. Issues a PUT to /api/products/:id
         $scope.product.$update(function () {
             $state.go('products'); // on success go back to home i.e. products state.
