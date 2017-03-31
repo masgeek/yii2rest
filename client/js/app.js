@@ -14,10 +14,10 @@ var app = angular.module('app', [
 
 
 app.config(function ($stateProvider) {
-    $stateProvider.state('products', { // state for showing all movies
-        url: '/products',
-        templateUrl: 'partials/products.html',
-        controller: 'ProductListController'
+    $stateProvider.state('events', { // state for showing all movies
+        url: '/events',
+        templateUrl: 'partials/events.html',
+        controller: 'EventsMapController'
     }).state('viewProduct', { //state for showing single movie
         url: '/product/:id/view',
         templateUrl: 'partials/product-view.html',
@@ -32,7 +32,7 @@ app.config(function ($stateProvider) {
         controller: 'ProductEditController'
     });
 }).run(function ($state) {
-    $state.go('products'); //make a transition to products state when app starts
+    $state.go('events'); //make a transition to products state when app starts
 });
 
 

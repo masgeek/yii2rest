@@ -9,9 +9,9 @@
 namespace app\api\modules\v1\models;
 
 
-use app\api\models\UserCompany;
+use app\api\models\Company;
 
-class COMPANYMODEL extends UserCompany
+class COMPANYMODEL extends Company
 {
     public function fields()
     {

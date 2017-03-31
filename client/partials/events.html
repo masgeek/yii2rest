@@ -5,11 +5,10 @@
         <td><h3>All Products</h3></td>
         <td></td>
     </tr>
-    <tr ng-repeat="product in products">
-        <td>{{product.product_name}}</td>
+    <tr ng-repeat="event in events">
+        <td>{{event.event_name}}</td>
         <td>
-            <a class="btn btn-primary" ui-sref="viewProduct({id:product.id})">View</a>
-            <a class="btn btn-danger"  ng-click="deleteProduct(product)">Delete</a>
+            <a class="btn btn-primary" ui-sref="viewProduct({id:event.event_id})">View</a>
         </td>
     </tr>
 </table>

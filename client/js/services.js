@@ -2,8 +2,8 @@
  * Created by barsa on 3/30/2017.
  */
 
-angular.module('app.services', []).factory('Product', function($resource) {
-    return $resource('../api/v1/products/:id', { id: '@id' }, {
+angular.module('app.services', []).factory('Event', function($resource) {
+    return $resource('../api/v1/events/:id', { id: '@id' }, {
         update: {
             method: 'PUT'
         }
