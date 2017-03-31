@@ -41,7 +41,7 @@
             "setPermission": [
                 {
                     "runtime": "0777",
-                    "web/assets": "0777",
+                    "assets": "0777",
                     "yii": "0755"
                 }
             ],
@@ -49,7 +49,7 @@
                 "config/web.php"
             ]
         },
-        "asset-installer-paths": {
+        "installer-paths": {
             "npm-asset-library": "vendor/npm",
             "bower-asset-library": "vendor/bower"
         }

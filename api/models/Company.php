@@ -5,7 +5,7 @@ namespace app\api\models;
 use Yii;
 
 /**
- * This is the model class for table "user_company".
+ * This is the model class for table "company".
  *
  * @property integer $company_id
  * @property integer $user_id
@@ -15,17 +15,17 @@ use Yii;
  * @property string $address
  * @property string $logo_path
  *
- * @property Uploads[] $uploads
  * @property User $user
+ * @property Uploads[] $uploads
  */
-class UserCompany extends \yii\db\ActiveRecord
+class Company extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return 'user_company';
+        return 'company';
     }
 
     /**
@@ -62,16 +62,16 @@ class UserCompany extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getUploads()
+    public function getUser()
     {
-        return $this->hasMany(Uploads::className(), ['company_id' => 'company_id']);
+        return $this->hasOne(User::className(), ['user_id' => 'user_id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getUser()
+    public function getUploads()
     {
-        return $this->hasOne(User::className(), ['user_id' => 'user_id']);
+        return $this->hasMany(Uploads::className(), ['company_id' => 'company_id']);
     }
 }

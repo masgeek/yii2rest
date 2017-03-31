@@ -11,8 +11,8 @@ use Yii;
  * @property string $full_names
  * @property string $email
  *
+ * @property Company[] $companies
  * @property ReservedBooth[] $reservedBooths
- * @property UserCompany[] $userCompanies
  */
 class User extends \yii\db\ActiveRecord
 {
@@ -50,16 +50,16 @@ class User extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getReservedBooths()
+    public function getCompanies()
     {
-        return $this->hasMany(ReservedBooth::className(), ['user_id' => 'user_id']);
+        return $this->hasMany(Company::className(), ['user_id' => 'user_id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getUserCompanies()
+    public function getReservedBooths()
     {
-        return $this->hasMany(UserCompany::className(), ['user_id' => 'user_id']);
+        return $this->hasMany(ReservedBooth::className(), ['user_id' => 'user_id']);
     }
 }

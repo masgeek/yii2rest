@@ -12,7 +12,7 @@ use Yii;
  * @property string $document_name
  * @property string $document_path
  *
- * @property UserCompany $company
+ * @property Company $company
  */
 class Uploads extends \yii\db\ActiveRecord
 {
@@ -34,7 +34,7 @@ class Uploads extends \yii\db\ActiveRecord
             [['company_id'], 'integer'],
             [['document_name'], 'string', 'max' => 30],
             [['document_path'], 'string', 'max' => 150],
-            [['company_id'], 'exist', 'skipOnError' => true, 'targetClass' => UserCompany::className(), 'targetAttribute' => ['company_id' => 'company_id']],
+            [['company_id'], 'exist', 'skipOnError' => true, 'targetClass' => Company::className(), 'targetAttribute' => ['company_id' => 'company_id']],
         ];
     }
 
@@ -56,6 +56,6 @@ class Uploads extends \yii\db\ActiveRecord
      */
     public function getCompany()
     {
-        return $this->hasOne(UserCompany::className(), ['company_id' => 'company_id']);
+        return $this->hasOne(Company::className(), ['company_id' => 'company_id']);
     }
 }
