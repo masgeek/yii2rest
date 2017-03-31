@@ -6,6 +6,7 @@
 var app = angular.module('app', [
     'ngResource', //allows us to use $resource to call rest urls
     'ngRoute',      //$routeProvider
+    'angularCSS', //Allows loading of view spcific CSS files
     'mgcrea.ngStrap',//bs-navbar, data-match-route directives
     'ui.router',
     'app.services',
@@ -21,7 +22,8 @@ app.config(function ($stateProvider) {
     }).state('viewEvent', { //state for showing single movie
         url: '/events/:id/view',
         templateUrl: 'partials/event-view.html',
-        controller: 'BoothViewController'
+        controller: 'BoothViewController',
+        css: 'css/booth.css'
     }).state('reserveBooth', { //state for adding a new movie
         url: '/events/new',
         templateUrl: 'partials/product-add.html',
