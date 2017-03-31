@@ -22,6 +22,7 @@ class BOOTHMODEL extends EventBooth
             'event_id',
             'event_booth_name',
             'booth_price',
+            'booth_image',
             'reserved' => function ($model) { //return tru if booth is reserved and false if not
                 return ($model->reservedBooths != null) ? true : false;
             },
