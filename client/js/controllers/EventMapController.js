@@ -4,39 +4,7 @@
 
 'use strict'
 
-//AIzaSyAiGWtTrb4SELW64VTFuxeesUaTBKOejGA
-var cities = [
-    {
-        city: 'Toronto',
-        desc: 'This is the best city in the world!',
-        lat: 43.7000,
-        long: -79.4000
-    },
-    {
-        city: 'New York',
-        desc: 'This city is aiiiiite!',
-        lat: 40.6700,
-        long: -73.9400
-    },
-    {
-        city: 'Chicago',
-        desc: 'This is the second best city in the world!',
-        lat: 41.8819,
-        long: -87.6278
-    },
-    {
-        city: 'Los Angeles',
-        desc: 'This city is live!',
-        lat: 34.0500,
-        long: -118.2500
-    },
-    {
-        city: 'Las Vegas',
-        desc: 'Sin City...\'nuff said!',
-        lat: 36.0800,
-        long: -115.1522
-    }
-];
+//AIzaSyAiGWtTrb4SELW64VTFuxeesUaTBKOejGA this is our google maps API key
 
 var app = angular.module('app.controllers', []);
 
@@ -69,20 +37,7 @@ app.controller('EventsMapController', function ($scope, $state, popupService, $w
         google.maps.event.addListener(marker, 'click', function () {
             infoWindow.setContent('<h2>' + marker.title + '</h2>' + marker.content);
             infoWindow.open($scope.map, marker);
-
-            //on click update div with information
-            //call the scope for this first
-           // alert(marker.event_id);
-
             $scope.event_details = Event.get({id: marker.event_id});
-            console.log($scope.event_details);
-            /*
-            $scope.eventDetails = function () { //Issues a GET request to /api/products/:id to get a movie to update
-                $scope.event = new Event()
-                $scope.event_details = $scope.event.get({id: marker.event_id});
-                console.log($scope.event_details);
-            };*/
-
         });
 
         $scope.markers.push(marker);

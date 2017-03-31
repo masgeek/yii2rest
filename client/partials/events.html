@@ -15,17 +15,55 @@
     </tr>
 </table>
 -->
-
-<a class="btn btn-primary" ui-sref="viewProduct({id:event.event_id})">View</a>
-
 <div id="map"></div>
+<!--
 <div id="class" ng-repeat="marker in markers | orderBy : 'title'">
     <a href="#" ng-click="openInfoWindow($event, marker)">{{marker.title}}</a>
 </div>
+-->
+<!--
+<ul class="list-group" ng-show="event_details">
+    <li class="list-group-item">{{event_details.event_name}}</li>
+    <li class="list-group-item">{{event_details.event_location}}</li>
+    <li class="list-group-item">{{event_details.event_name}}</li>
+</ul>
+-->
+
+<div class="jumbotron" ng-show="event_details">
+    <div class="row">
+        <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
+            <img src="https://www.svgimages.com/svg-image/s5/man-passportsize-silhouette-icon-256x256.png"
+                 alt="stack photo" class="img">
+        </div>
+        <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
+            <div class="container" style="border-bottom:1px solid black">
+                <h2>Event Name : {{event_details.event_name}}</h2>
+            </div>
+            <hr>
+            <ul class="container details">
+                <li>Event Location: {{event_details.event_location}}</li>
+                <li>Event Country: {{event_details.event_country}}</li>
+                <li>Event Date: {{event_details.event_date}}</li>
+                <li><a class="btn btn-primary btn-block" ui-sref="viewEvent({id:event_details.event_id})">View Event</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
 
 <style>
+    .details li {
+        list-style: none;
+    }
+
+    li {
+        margin-bottom: 10px;
+
+    }
+
     #map {
-        height: 600px;
+        height: 400px;
         width: 100%;
     }
 </style>
