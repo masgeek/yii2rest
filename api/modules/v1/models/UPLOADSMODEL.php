@@ -21,7 +21,7 @@ class UPLOADSMODEL extends Uploads
             'document_name',
             'document_path',
             'reserved_by' => function ($model) { //return tru if booth is reserved and false if not
-                return $model->userCompany;
+                return $model->company;
             },
         ];
     }

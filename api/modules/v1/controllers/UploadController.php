@@ -13,5 +13,5 @@ use yii\rest\ActiveController;
 
 class UploadController extends ActiveController
 {
-    public $modelClass = 'app\api\modules\v1\models\COMPANYMODEL';
+    public $modelClass = 'app\api\modules\v1\models\UPLOADSMODEL';
 }
