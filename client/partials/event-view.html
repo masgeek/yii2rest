@@ -25,21 +25,46 @@
 
 <div class="row">
     <div class="col-md-4" ng-repeat-start="booth in event_view">
-        <div ng-class="booth.reserved==true ? 'panel panel-danger' : 'panel panel-success'">
-            <!-- change color according to booking state -->
-            <div class="panel-heading">
-                <h4>{{booth.event_booth_name}} Booth - {{booth.booth_price==0 ? 'Free' : '$'+booth.booth_price}}</h4>
-                <span ng-if="booth.reserved==true" class="label label-danger pull-right">Booked</span>
-                <span ng-if="booth.reserved==false" class="label label-success pull-right">Availabe</span>
-            </div>
-            <div class="panel-body">
-                <div class="col-md-12">
-                    <img ng-if="booth.reserved==false" src="{{booth.booth_image}}" class="img img-responsive"/>
-                    <img ng-if="booth.reserved==true" src="{{booth.company.logo_path}}" class="img img-responsive"/>
+        <div class="panel-group">
+            <div ng-class="booth.reserved==true ? 'panel panel-danger' : 'panel panel-success'">
+                <!-- change color according to booking state -->
+                <div class="panel-heading">
+                    <span>{{booth.event_booth_name}} Booth - ${{booth.booth_price}}</span>
+                    <span ng-if="booth.reserved==true" class="label label-danger pull-right">Booked</span>
+                    <span ng-if="booth.reserved==false" class="label label-success pull-right">Free</span>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-12">
+                        <img ng-if="booth.reserved==false" src="{{booth.booth_image}}" class="img img-responsive"/>
+                        <img ng-if="booth.reserved==true" src="{{booth.company.logo_path}}" class="img img-responsive"/>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <!--<button class="btn btn-success btn-block">Reserve Booth</button>-->
                 </div>
             </div>
-            <div class="panel-footer">
-                <button class="btn btn-success btn-block">Reserve Booth</button>
+            <!-- panel for showing company details -->
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#collapse{{booth.event_booth_id}}">Booked User
+                            Details</a>
+                    </h4>
+                </div>
+                <div id="collapse{{booth.event_booth_id}}" class="panel-collapse collapses">
+                    <div class="panel-body">
+                        <!-- company details -->
+
+                            <li class="list-group-item">{{booth.company.company_name}}</li>
+                            <li class="list-group-item">{{booth.company.company_admin}}</li>
+                            <span class="list-group-item">{{booth.company.email}}</span>
+
+                    </div>
+                    <div class="panel-footer">
+                        <strong>Address</strong>
+                        <address>{{booth.company.address}}</address>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
