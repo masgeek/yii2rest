@@ -2,7 +2,7 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=tsobu',
+    'dsn' => 'mysql:host=localhost;dbname=crossover',
     'username' => 'root',
     'password' => '',
     'charset' => 'utf8',
