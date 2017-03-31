@@ -5,7 +5,7 @@
 
 //var app = angular.module('app.controllers', []);
 
-app.controller('BoothViewController', function ($scope, $stateParams, Event) {
-    $scope.event_view = Event.get({id: $stateParams.id}); //Get a single product. Issues a GET to /api/products/:id
+app.controller('BoothViewController', function ($scope, $stateParams, EventBooth) {
+    $scope.event_view = EventBooth.get({id: $stateParams.id}); //Get a single product. Issues a GET to /api/products/:id
     console.log($scope.event_view);
 });

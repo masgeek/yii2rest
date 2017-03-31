@@ -62,6 +62,7 @@ $config = [
                         'v1/user',
                         'v1/company',
                     ],
+                    //'GET,HEAD <id:\d+>/booth' => 'booth/all-booths',
                     'tokens' => [
                         '{id}' => '<id:\\w+>',
                         //'{code}' => '<code:\\w+>'
@@ -69,6 +70,8 @@ $config = [
                     'extraPatterns' => [
                         'GET query' => 'query',
                         'GET users' => 'citizens',
+                        //'GET all-booths' => 'all-booths',
+                        'GET all/{id}' => 'all',
                     ],
                 ],
             ],

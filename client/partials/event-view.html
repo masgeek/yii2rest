@@ -24,8 +24,8 @@
 -->
 
 <div class="row">
-    <div class="col-md-4" ng-repeat-start="booth in event_view.event_booths">
-        <div class="panel panel-primary">
+    <div class="col-md-4" ng-repeat-start="booth in event_view">
+        <div ng-class="booth.reserved==true ? 'panel panel-danger' : 'panel panel-success'"> <!-- change color according to booing state -->
             <div class="panel-heading">{{booth.event_booth_name}} Booth</div>
             <div class="panel-body">
                 <img src="{{booth.booth_image}}" class="img img-responsive" />
