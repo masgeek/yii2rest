@@ -5,9 +5,6 @@
 
 var app = angular.module('app.controllers', []);
 
-app.controller('EventsMapController', function ($scope, $state, popupService, $window, Event) {
-    $scope.events = Event.query(); //fetch all products. Issues a GET to /api/products
-});
 
 app.controller('ProductViewController', function ($scope, $stateParams, Event) {
     $scope.events = Event.get({id: $stateParams.id}); //Get a single product. Issues a GET to /api/products/:id
