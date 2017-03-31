@@ -55,9 +55,12 @@ $config = [
                 [
                     'class' => 'yii\rest\UrlRule',
                     'controller' => [
-                        'v1/country',
-                        'v1/citizen',
-                        'v1/product',
+                        'v1/event',
+                        'v1/booth',
+                        'v1/reserve',
+                        'v1/upload',
+                        'v1/user',
+                        'v1/company',
                     ],
                     'tokens' => [
                         '{id}' => '<id:\\w+>',

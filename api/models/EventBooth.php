@@ -32,7 +32,7 @@ class EventBooth extends \yii\db\ActiveRecord
         return [
             [['event_id', 'event_booth_name'], 'required'],
             [['event_id'], 'integer'],
-            [['event_booth_name'], 'string', 'max' => 20],
+            [['event_booth_name'], 'string', 'max' => 50],
             [['event_id'], 'exist', 'skipOnError' => true, 'targetClass' => Event::className(), 'targetAttribute' => ['event_id' => 'event_id']],
         ];
     }
