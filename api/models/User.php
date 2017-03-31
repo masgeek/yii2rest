@@ -1,0 +1,65 @@
+<?php
+
+namespace app\api\models;
+
+use Yii;
+
+/**
+ * This is the model class for table "user".
+ *
+ * @property integer $user_id
+ * @property string $full_names
+ * @property string $email
+ *
+ * @property ReservedBooth[] $reservedBooths
+ * @property UserCompany[] $userCompanies
+ */
+class User extends \yii\db\ActiveRecord
+{
+    /**
+     * @inheritdoc
+     */
+    public static function tableName()
+    {
+        return 'user';
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function rules()
+    {
+        return [
+            [['full_names', 'email'], 'required'],
+            [['full_names', 'email'], 'string', 'max' => 30],
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels()
+    {
+        return [
+            'user_id' => 'User ID',
+            'full_names' => 'Full Names',
+            'email' => 'Email',
+        ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getReservedBooths()
+    {
+        return $this->hasMany(ReservedBooth::className(), ['user_id' => 'user_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUserCompanies()
+    {
+        return $this->hasMany(UserCompany::className(), ['user_id' => 'user_id']);
+    }
+}
