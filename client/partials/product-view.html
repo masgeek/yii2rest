@@ -1,0 +1,25 @@
+<table class="table movietable">
+    <tr>
+        <td><h3>Details for {{product.product_name}}</h3></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Movie Title</td>
+        <td>{{product.product_name}}</td>
+    </tr>
+    <tr>
+        <td>Director</td>
+        <td>{{product.country}}</td>
+    </tr>
+    <tr>
+        <td>Release Year</td>
+        <td>{{product.warehouse}}</td>
+    </tr>
+    <tr>
+        <td>Movie Genre</td>
+        <td>{{product.date_added}}</td>
+    </tr>
+</table>
+<div>
+    <a class="btn btn-primary" ui-sref="editProduct({id:product.id})">Edit</a>
+</div>
