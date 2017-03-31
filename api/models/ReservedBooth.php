@@ -7,10 +7,10 @@ use Yii;
 /**
  * This is the model class for table "reserved_booth".
  *
- * @property integer $reserved_booth_id
- * @property integer $event_booth_id
- * @property integer $user_id
- * @property integer $reserved
+ * @property int $reserved_booth_id
+ * @property int $event_booth_id
+ * @property int $user_id
+ * @property int $reserved
  *
  * @property EventBooth $eventBooth
  * @property User $user

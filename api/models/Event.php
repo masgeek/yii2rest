@@ -7,11 +7,11 @@ use Yii;
 /**
  * This is the model class for table "event".
  *
- * @property integer $event_id
+ * @property int $event_id
  * @property string $event_name
- * @property string $event_location
- * @property integer $event_lat
- * @property integer $event_long
+ * @property string $event_location City of the event
+ * @property double $event_lat Map lattitude
+ * @property double $event_long Map longitude
  *
  * @property EventBooth[] $eventBooths
  */
@@ -32,7 +32,7 @@ class Event extends \yii\db\ActiveRecord
     {
         return [
             [['event_name', 'event_location', 'event_lat', 'event_long'], 'required'],
-            [['event_lat', 'event_long'], 'integer'],
+            [['event_lat', 'event_long'], 'number'],
             [['event_name', 'event_location'], 'string', 'max' => 50],
         ];
     }

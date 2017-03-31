@@ -7,9 +7,9 @@ use Yii;
 /**
  * This is the model class for table "user".
  *
- * @property integer $user_id
- * @property string $full_names
- * @property string $email
+ * @property int $user_id
+ * @property string $full_names Full names
+ * @property string $email Email address
  *
  * @property Company[] $companies
  * @property ReservedBooth[] $reservedBooths

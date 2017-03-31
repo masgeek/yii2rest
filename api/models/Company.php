@@ -7,8 +7,8 @@ use Yii;
 /**
  * This is the model class for table "company".
  *
- * @property integer $company_id
- * @property integer $user_id
+ * @property int $company_id
+ * @property int $user_id
  * @property string $company_name
  * @property string $company_admin
  * @property string $email

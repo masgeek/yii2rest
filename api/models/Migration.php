@@ -8,7 +8,7 @@ use Yii;
  * This is the model class for table "migration".
  *
  * @property string $version
- * @property integer $apply_time
+ * @property int $apply_time
  */
 class Migration extends \yii\db\ActiveRecord
 {

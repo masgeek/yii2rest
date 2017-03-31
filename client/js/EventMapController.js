@@ -44,8 +44,8 @@ app.controller('EventsMapController', function ($scope, $state, popupService, $w
 
     //set up teh maps data
     var mapOptions = {
-        zoom: 4,
-        center: new google.maps.LatLng(40.0000, -98.0000),
+        zoom: 4, //zoom 2 wntire glob, 4 closser to coordinate
+        center: new google.maps.LatLng(1, 36), //starting coordinates
         mapTypeId: google.maps.MapTypeId.TERRAIN
     }
     $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
@@ -58,9 +58,9 @@ app.controller('EventsMapController', function ($scope, $state, popupService, $w
         var marker = new google.maps.Marker({
             map: $scope.map,
             position: new google.maps.LatLng(info.event_lat, info.event_long),
-            title: info.event_location
+            title: info.event_name
         });
-        marker.content = '<div class="infoWindowContent">' + info.event_name + '</div>';
+        marker.content = '<div class="infoWindowContent">' + info.event_location + '</div>';
 
         google.maps.event.addListener(marker, 'click', function () {
             infoWindow.setContent('<h2>' + marker.title + '</h2>' + marker.content);

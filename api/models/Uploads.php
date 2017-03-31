@@ -7,8 +7,8 @@ use Yii;
 /**
  * This is the model class for table "uploads".
  *
- * @property integer $upload_id
- * @property integer $company_id
+ * @property int $upload_id
+ * @property int $company_id
  * @property string $document_name
  * @property string $document_path
  *
