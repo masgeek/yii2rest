@@ -1,0 +1,23 @@
+<table class="table">
+    <tr>
+        <td><h3>Event Name{{event_view.event_name}}</h3></td>
+        <td></td>
+    </tr>
+</table>
+
+<h3>Available Event Booths</h3>
+<table class="table">
+    <tr>
+        <td>Booth Name</td>
+        <td>Booth Fee</td>
+        <td>#</td>
+    </tr>
+    <tr ng-repeat="booth in event_view.event_booths" ng-show="event_view.event_booths">
+        <td>{{booth.event_booth_name}}</td>
+        <td>{{booth.booth_price}}</td>
+        <td>
+            <a class="btn btn-primary" ui-sref="viewProduct({id:product.id})">View</a>
+            <a class="btn btn-danger" ng-click="deleteProduct(product)">Delete</a>
+        </td>
+    </tr>
+</table>

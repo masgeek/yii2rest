@@ -14,7 +14,7 @@ app.controller('EventsMapController', function ($scope, $state, popupService, $w
     $scope.markers = []; //array to hold out markers
 
     var mapOptions = {
-        zoom: 4, //zoom 2 wntire glob, 4 closser to coordinate
+        zoom: 4,
         center: new google.maps.LatLng(1, 36), //starting coordinates
         mapTypeId: google.maps.MapTypeId.TERRAIN
     }
@@ -44,18 +44,18 @@ app.controller('EventsMapController', function ($scope, $state, popupService, $w
 
     }
 
-    //fetch teh data from the backend
+    //fetch the data from the backend
     $scope.events = Event.query(function () {//fetch all events. Issues a GET to /api/events
         //create markers in here
         for (var i = 0; i < $scope.events.length; i++) {
-            //console.log($scope.events[i]);
+            //console.log($scope.events[i])
             createMarker($scope.events[i]);
         }
 
     });
     $scope.openInfoWindow = function (e, selectedMarker) {
         e.preventDefault();
-        google.maps.event.trigger(selectedMarker, 'click');
+        google.maps.event.trigger(selectedMarker, 'click'); //add click event to the markers
     }
 
 

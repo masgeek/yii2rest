@@ -20,6 +20,7 @@ app.controller('ProductListController', function ($scope, $state, popupService, 
 app.controller('ProductViewController', function ($scope, $stateParams, Product) {
     $scope.product = Product.get({id: $stateParams.id}); //Get a single product. Issues a GET to /api/products/:id
 });
+
 app.controller('ProductCreateController', function ($scope, $state, $stateParams, Product) {
     $scope.product = new Product();  //create new product instance. Properties will be set via ng-model on UI
 

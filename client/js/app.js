@@ -18,12 +18,12 @@ app.config(function ($stateProvider) {
         url: '/events',
         templateUrl: 'partials/events.html',
         controller: 'EventsMapController'
-    }).state('viewProduct', { //state for showing single movie
-        url: '/product/:id/view',
-        templateUrl: 'partials/product-view.html',
-        controller: 'ProductViewController'
-    }).state('newProduct', { //state for adding a new movie
-        url: '/products/new',
+    }).state('viewEvent', { //state for showing single movie
+        url: '/events/:id/view',
+        templateUrl: 'partials/event-view.html',
+        controller: 'BoothViewController'
+    }).state('reserveBooth', { //state for adding a new movie
+        url: '/events/new',
         templateUrl: 'partials/product-add.html',
         controller: 'MovieCreateController'
     }).state('editProduct', { //state for updating a movie
