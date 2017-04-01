@@ -4,12 +4,12 @@
 
 'use strict'
 
-app.controller('ReserveViewController', function ($scope, $state, $log, $stateParams, User, Reserve, Company, Booth, Upload, ngDialog) {
+app.controller('ReserveViewController', function ($scope, $state, $timeout, $stateParams, User, Reserve, Company, Booth, DocumentUpload, ngDialog, Upload) {
 
     $scope.user = new User();
     $scope.reserve = new Reserve();  //create new reservation instance. Properties will be set via ng-model on UI
     $scope.company = new Company();
-    $scope.upload = new Upload();
+    //$scope.docupload = new DocumentUpload();
 
 
     $scope.booth = Booth.get({id: $stateParams.id}, function () {//Get a single booth based on event_booth_id
@@ -60,5 +60,47 @@ app.controller('ReserveViewController', function ($scope, $state, $log, $statePa
             template: 'partials/file-upload.html',
         });
     };
-
 });
+
+
+app.controller('UploadController', ['$scope', 'Upload', '$timeout', function ($scope, Upload, $timeout) {
+    $scope.$watch('files', function () {
+        $scope.upload($scope.files);
+    });
+    $scope.$watch('file', function () {
+        if ($scope.file != null) {
+            $scope.files = [$scope.file];
+        }
+    });
+    $scope.log = '';
+
+    $scope.upload = function (files) {
+        if (files && files.length) {
+            for (var i = 0; i < files.length; i++) {
+                var file = files[i];
+                if (!file.$error) {
+                    Upload.upload({
+                        url: '../api/v1/uploads/document', //save to the uploads endpoint
+                        data: {
+                            company_id: 'mas',
+                            file: file
+                        }
+                    }).then(function (resp) {
+                        $timeout(function() {
+                            $scope.log = 'file: ' +
+                                resp.config.data.file.name +
+                                ', Response: ' + JSON.stringify(resp.data) +
+                                '\n' + $scope.log;
+                        });
+                    }, null, function (evt) {
+                        var progressPercentage = parseInt(100.0 *
+                            evt.loaded / evt.total);
+                        $scope.log = 'progress: ' + progressPercentage +
+                            '% ' + evt.config.data.file.name + '\n' +
+                            $scope.log;
+                    });
+                }
+            }
+        }
+    };
+}]);
