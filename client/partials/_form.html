@@ -1,31 +1,55 @@
-<div class="form-group">
-    <label for="title" class="col-sm-2 control-label">Title</label>
-    <div class="col-sm-10">
-        <input type="text" ng-model="product.product_name" class="form-control" id="title" placeholder="Movie Title Here"/>
+<fieldset>
+
+    {{booth}}
+    {{reserve}}
+    {{company}}
+    <!-- Form Name -->
+    <legend>Event Registration</legend>
+
+    <!-- Text input-->
+    <div class="form-group">
+        <div class="col-md-6">
+            <input id="username" name="reserve.full_names" type="text" placeholder="Full Names" class="form-control" required="">
+            <span class="help-block">Full Names</span>
+        </div>
+        <div class="col-md-6">
+            <input id="user_email" name="reserve.email" type="email" placeholder="Email Address" class="form-control" required>
+            <span class="help-block">Email Address</span>
+        </div>
     </div>
-</div>
-<div class="form-group">
-    <label for="year" class="col-sm-2 control-label">Release Year</label>
-    <div class="col-sm-10">
-        <input type="text" ng-model="product.country" class="form-control" id="year"
-               placeholder="When was the movie released?"/>
+
+    <div class="form-group">
+        <div class="col-md-6">
+            <input id="company_name" name="company.company_name" type="text" placeholder="Full Names" class="form-control" required="">
+            <span class="help-block">Full Names</span>
+        </div>
+        <div class="col-md-6">
+            <input id="company_admin" name="company.company_admin" type="text" placeholder="Full Names" class="form-control" required="">
+            <span class="help-block">Full Names</span>
+        </div>
     </div>
-</div>
-<div class="form-group">
-    <label for="director" class="col-sm-2 control-label">Director</label>
-    <div class="col-sm-10">
-        <input type="text" ng-model="product.warehouse" class="form-control" id="director"
-               placeholder="Who directed the movie?"/>
+    <hr/>
+    <legend>Company Details</legend>
+    <div class="form-group">
+        <div class="col-md-4">
+            <input id="company_email" name="company.email" type="text" placeholder="Full Names" class="form-control" required="">
+            <span class="help-block">Full Names</span>
+        </div>
+        <div class="col-md-4">
+            <input id="phone" name="company.phone" type="text" placeholder="Full Names" class="form-control" required="">
+            <span class="help-block">Full Names</span>
+        </div>
+        <div class="col-md-4">
+            <input id="logo" name="company.logo_path" type="text" placeholder="Full Names" class="form-control" required="">
+            <span class="help-block">Full Names</span>
+        </div>
     </div>
-</div>
-<div class="form-group">
-    <label for="plot" class="col-sm-2 control-label">Movie Genre</label>
-    <div class="col-sm-10">
-        <input type="text" ng-model="product.id" class="form-control" id="plot" placeholder="Movie genre here"/>
+
+    <div class="form-group">
+        <div class="col-md-12">
+            <textarea class="form-control" id="address" name="company.address"></textarea>
+            <span class="help-block">Company Address</span>
+        </div>
     </div>
-</div>
-<div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-        <input type="submit" class="btn btn-primary" value="Save"/>
-    </div>
-</div>
+
+</fieldset>
