@@ -3,7 +3,7 @@
  */
 'use strict'
 
-var app = angular.module('app.controllers', []);
+//var app = angular.module('app.controllers', []);
 
 app.controller('DocumentViewController', function ($scope, $stateParams, $timeout, Upload) {
     $scope.$watch('files', function () {
