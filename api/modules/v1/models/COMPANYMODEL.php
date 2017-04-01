@@ -21,6 +21,7 @@ class COMPANYMODEL extends Company
             'company_name',
             'company_admin',
             'email',
+            'phone',
             'address',
             'logo_path',
             'uploads' => function ($model) { //return tru if booth is reserved and false if not

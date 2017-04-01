@@ -44,7 +44,7 @@
                 </div>
             </div>
             <!-- panel for showing company details -->
-            <div class="panel panel-primary">
+            <div class="panel panel-primary" ng-if="booth.reserved==true">
                 <div class="panel-heading">
                     <h4 class="panel-title">
                         <a data-toggle="collapse" href="#collapse{{booth.event_booth_id}}">Booked User
@@ -52,15 +52,11 @@
                     </h4>
                 </div>
                 <div id="collapse{{booth.event_booth_id}}" class="panel-collapse collapses">
-                    <div class="panel-body">
-                        <!-- company details -->
-
-                            <li class="list-group-item">{{booth.company.company_name}}</li>
-                            <li class="list-group-item">{{booth.company.company_admin}}</li>
-                            <span class="list-group-item">{{booth.company.email}}</span>
-
-                    </div>
                     <div class="panel-footer">
+                        <p><strong>Company Name:</strong> {{booth.company.company_name}}</p>
+                        <p><strong>Company Admin:</strong> {{booth.company.company_admin}}</p>
+                        <p><strong>Phone Number:</strong> {{booth.company.phone}}</p>
+                        <p><strong>Email Address:</strong> {{booth.company.email}}</p>
                         <strong>Address</strong>
                         <address>{{booth.company.address}}</address>
                     </div>
