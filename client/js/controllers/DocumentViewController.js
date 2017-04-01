@@ -5,7 +5,7 @@
 
 //var app = angular.module('app.controllers', []);
 
-app.controller('DocumentViewController', function ($scope, $stateParams, $timeout, Upload) {
+app.controller('DocumentViewController', function ($scope, $stateParams, $timeout, Upload, Booth) {
     $scope.$watch('files', function () {
         $scope.upload($scope.files);
     });
@@ -44,5 +44,12 @@ app.controller('DocumentViewController', function ($scope, $stateParams, $timeou
                 }
             }
         }
+    };
+
+    $scope.confirmReservation = function ($event_booth_id) {
+        //first close the modal dialog that was open
+        ngDialog.close();
+        //next redirected to the view we are interested in
+        $state.go('registerUser', {id: $event_booth_id}); // on success go back to home i.e. products state.
     };
 });

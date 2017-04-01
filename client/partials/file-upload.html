@@ -2,11 +2,12 @@
     <button class="btn btn-succes btn-lg btn-block" ngf-select="upload($files)" ngf-multiple="true">Select File</button>
     Drop File:
     <div style="background: red" ngf-drop ngf-select ng-model="files" class="drop-box"
-         ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true"
+         ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="false"
          accept="image/*,application/pdf"
          ngf-pattern="'image/*,application/pdf'">Drop files here
     </div>
 
+    <a class="btn btn-primary btn-block" ui-sref="events">Events Map</a>
     <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
     Files:
     <ul>

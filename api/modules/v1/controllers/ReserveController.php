@@ -9,9 +9,25 @@
 namespace app\api\modules\v1\controllers;
 
 
+use app\api\models\VwReserveSummary;
 use yii\rest\ActiveController;
 
 class ReserveController extends ActiveController
 {
     public $modelClass = 'app\api\modules\v1\models\RESERVEDMODEL';
+
+
+    /**
+     * @param $id company id
+     * @return array|\yii\db\ActiveRecord[]
+     */
+    public function actionSummary($id)
+    {
+        $data = VwReserveSummary::find()
+            ->where(['company_id' => $id])
+            ->one();
+
+
+        return $data;
+    }
 }

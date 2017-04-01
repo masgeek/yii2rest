@@ -22,19 +22,24 @@ app.controller('ReserveViewController', function ($scope, $state, $timeout, $sta
             .then(function (resp) {
                 $scope.company.user_id = resp.user_id;
                 $scope.reserve.user_id = resp.user_id;
+                $scope.reserve.reserved = 0; //initally set the company as not reserved
                 //lets save the company information
                 $scope.company.$save()
                     .then(function (res) {
                         //save the reservation
                         $scope.reserve.$save().then(function (resp) {
                             //redirect back to the events map
-                           // $state.go('events');
+                            // $state.go('events');
                         });
                     })
-                    .catch(function (error) {$scope.save_message = (error.data);})
+                    .catch(function (error) {
+                        $scope.save_message = (error.data);
+                    })
                 console.log(resp)
             })
-            .catch(function (error) {$scope.save_message = (error.data);})
+            .catch(function (error) {
+                $scope.save_message = (error.data);
+            })
     }
 
     //company logo upload

@@ -19,17 +19,9 @@ class BoothController extends ActiveController
 
     public function actionAll($id)
     {
-        //\Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
-
-        /*   $data = new ActiveDataProvider([
-               'query' => BOOTHMODEL::find(),
-           ]);*/
-
-
-        //$data = BOOTHMODEL::findOne($id);
         $data = BOOTHMODEL::find()
             ->where(['event_id' => $id])
-            ->all();//::findAll(['event_id' => $id]);
+            ->all();
 
 
         return $data;

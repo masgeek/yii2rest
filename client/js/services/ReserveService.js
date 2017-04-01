@@ -19,6 +19,14 @@ app.factory('Reserve', function ($resource) {
     });
 });
 
+app.factory('Summary', function ($resource) {
+    return $resource('../api/v1/reserves/:id', {id: '@id'}, {
+        update: {
+            method: 'PUT'
+        }
+    });
+});
+
 app.factory('Company', function ($resource) {
     return $resource('../api/v1/companies/:id', {id: '@id'}, {
         update: {
