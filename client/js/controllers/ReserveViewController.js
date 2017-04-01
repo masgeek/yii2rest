@@ -4,15 +4,15 @@
 
 'use strict'
 
-app.controller('ReserveViewController', function ($scope, $state, $stateParams, User, Reserve, Company, Booth) {
+app.controller('ReserveViewController', function ($scope, $state, $log, $stateParams, User, Reserve, Company, Booth, Upload, ngDialog) {
 
     $scope.user = new User();
     $scope.reserve = new Reserve();  //create new reservation instance. Properties will be set via ng-model on UI
     $scope.company = new Company();
+    $scope.upload = new Upload();
 
 
     $scope.booth = Booth.get({id: $stateParams.id}, function () {//Get a single booth based on event_booth_id
-        console.log($scope.booth.event_booth_id);
         //add event booth to reserve model after the call is done
         $scope.reserve.event_booth_id = $scope.booth.event_booth_id;
     });
@@ -52,6 +52,13 @@ app.controller('ReserveViewController', function ($scope, $state, $stateParams, 
             }
         );
     }
-    ;
-})
-;
+
+    //scope for showing the file upload modal
+    //this function opens the modal dialog for booth details
+    $scope.uploadDocument = function () { //get details of the single booth and open it in a modal
+        ngDialog.open({
+            template: 'partials/file-upload.html',
+        });
+    };
+
+});

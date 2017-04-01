@@ -8,6 +8,7 @@ var app = angular.module('app', [
     'ngRoute',      //$routeProvider
     'angularCSS', //Allows loading of view spcific CSS files
     'ngDialog',//alows us to implement a popup fdialog
+    'lr.upload',//allows for file uploading
     'mgcrea.ngStrap',//bs-navbar, data-match-route directives
     'ui.router',
     'app.services',
