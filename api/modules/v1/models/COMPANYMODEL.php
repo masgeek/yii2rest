@@ -35,6 +35,16 @@ class COMPANYMODEL extends Company
         ];
     }
 
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels()
+    {
+        return [
+            'email' => 'Company Email',
+        ];
+    }
+
     public function fields()
     {
         return [

@@ -1,11 +1,4 @@
 <fieldset>
-
-    <!--
-    {{booth}}
-    {{reserve}}
-    {{user}}
-    {{company}}
-    -->
     <!-- Form Name -->
     <legend>Event Registration</legend>
 
@@ -51,7 +44,7 @@
             <span class="help-block">Company Phone</span>
         </div>
         <div class="col-md-4">
-            <input id="logo" ng-model="company.logo_path" type="text" class="form-control" required="">
+            <input id="logo" ng-model="company.logo_path" type="text" class="form-control" required="" autocomplete="off">
             <button class="btn btn-success btn-block" ngf-select="logoUpload($files)" ngf-multiple="false"
                     accept="image/*" ngf-pattern="'image/*'">Upload Logo
             </button>
@@ -70,7 +63,7 @@
 </fieldset>
 <div class="form-group">
     <div class="col-md-10 col-md-offset-1">
-        <input type="button" class="btn btn-primary btn-block" value="Reserve Booth" ng-click="addProduct()"/>
+        <input type="submit" class="btn btn-primary btn-block" value="Reserve Booth"/>
     </div>
 </div>
 

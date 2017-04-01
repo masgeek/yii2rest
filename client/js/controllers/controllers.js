@@ -12,7 +12,7 @@ app.controller('ProductViewController', function ($scope, $stateParams, Event) {
 app.controller('ProductCreateController', function ($scope, $state, $stateParams, Event) {
     $scope.events = new Event();  //create new product instance. Properties will be set via ng-model on UI
 
-    $scope.addProduct = function () { //create a new movie. Issues a POST to /api/products
+    $scope.addReservation = function () { //create a new movie. Issues a POST to /api/products
         $scope.events.$save(function () {
             $state.go('products'); // on success go back to home i.e. products state.
         });

@@ -17,40 +17,24 @@ app.controller('ReserveViewController', function ($scope, $state, $timeout, $sta
         $scope.reserve.event_booth_id = $scope.booth.event_booth_id;
     });
 
-    $scope.addProduct = function () { //create a new reservation. Issues a POST to /api/
-        $scope.user.$save(function (resp, headers) {
-                //$state.go('products'); // on success save the subsequebnt infoamtion
-                //next save the company information
-
+    $scope.addReservation = function () { //create a new reservation. Issues a POST to /api/
+        $scope.user.$save()
+            .then(function (resp) {
                 $scope.company.user_id = resp.user_id;
                 $scope.reserve.user_id = resp.user_id;
-
-                //Save order
-                /*
-                 Save user data
-                 --Get user id
-                 ---Save company data
-                 ----Get company id
-                 -----Save the booth reservation
-                 */
-                $scope.company.$save(function (resp, headers) {
-                    //next get the company id
-                    $scope.company.company_id = resp.company_id;
-                    //now finally add it to the reservation tables
-                    $scope.reserve.$save(function (resp, headers) {
-                        //redirect to wherever
-                    }, function (error) {
-                        $scope.save_message = (error.data); //alert the user
-                    });
-                }, function (error) {
-                    $scope.save_message = (error.data); //alert the user
-                });
-
-            }, function (error) {
-                //console.log(resp);
-                $scope.save_message = (error.data); //alert the user
-            }
-        );
+                //lets save the company information
+                $scope.company.$save()
+                    .then(function (res) {
+                        //save the reservation
+                        $scope.reserve.$save().then(function (resp) {
+                            //redirect back to the events map
+                           // $state.go('events');
+                        });
+                    })
+                    .catch(function (error) {$scope.save_message = (error.data);})
+                console.log(resp)
+            })
+            .catch(function (error) {$scope.save_message = (error.data);})
     }
 
     //scope for showing the file upload modal
@@ -86,9 +70,9 @@ app.controller('ReserveViewController', function ($scope, $state, $timeout, $sta
                     }).then(function (resp) {
                         $timeout(function () {
                             /*$scope.log = 'file: ' +
-                                resp.config.data.file.name +
-                                ', Response: ' + JSON.stringify(resp.data) +
-                                '\n' + $scope.log;*/
+                             resp.config.data.file.name +
+                             ', Response: ' + JSON.stringify(resp.data) +
+                             '\n' + $scope.log;*/
 
                             $scope.company.logo_path = resp.data.file_path;
                         });
