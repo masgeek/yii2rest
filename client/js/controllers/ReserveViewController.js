@@ -31,7 +31,7 @@ app.controller('ReserveViewController', function ($scope, $state, $timeout, $sta
                  --Get user id
                  ---Save company data
                  ----Get company id
-                 -----Save teh booth reservation
+                 -----Save the booth reservation
                  */
                 $scope.company.$save(function (resp, headers) {
                     //next get the company id
@@ -60,10 +60,50 @@ app.controller('ReserveViewController', function ($scope, $state, $timeout, $sta
             template: 'partials/file-upload.html',
         });
     };
+
+    //company logo upload
+    $scope.$watch('files', function () {
+        $scope.logoUpload($scope.files);
+    });
+    $scope.$watch('file', function () {
+        if ($scope.file != null) {
+            $scope.files = [$scope.file];
+        }
+    });
+    $scope.log = '';
+
+    $scope.logoUpload = function (files) {
+        if (files && files.length) {
+            for (var i = 0; i < files.length; i++) {
+                var file = files[i];
+                if (!file.$error) {
+                    Upload.upload({
+                        url: '../api/v1/companies/logo', //save to the uploads endpoint
+                        data: {
+                            logo_folder: 'logos',
+                            file: file
+                        }
+                    }).then(function (resp) {
+                        $timeout(function () {
+                            /*$scope.log = 'file: ' +
+                                resp.config.data.file.name +
+                                ', Response: ' + JSON.stringify(resp.data) +
+                                '\n' + $scope.log;*/
+
+                            $scope.company.logo_path = resp.data.file_path;
+                        });
+                    }, null, function (evt) {
+                        var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+                        $scope.log = 'progress: ' + progressPercentage + '% ' + evt.config.data.file.name;
+                    });
+                }
+            }
+        }
+    };
 });
 
 
-app.controller('UploadController', ['$scope', 'Upload', '$timeout', function ($scope, Upload, $timeout) {
+app.controller('UploadController', function ($scope, $timeout, Upload) {
     $scope.$watch('files', function () {
         $scope.upload($scope.files);
     });
@@ -86,7 +126,7 @@ app.controller('UploadController', ['$scope', 'Upload', '$timeout', function ($s
                             file: file
                         }
                     }).then(function (resp) {
-                        $timeout(function() {
+                        $timeout(function () {
                             $scope.log = 'file: ' +
                                 resp.config.data.file.name +
                                 ', Response: ' + JSON.stringify(resp.data) +
@@ -103,4 +143,4 @@ app.controller('UploadController', ['$scope', 'Upload', '$timeout', function ($s
             }
         }
     };
-}]);
+});

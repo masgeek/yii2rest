@@ -35,7 +35,7 @@
                 </div>
                 <div class="panel-body">
                     <div class="col-md-12">
-                        <img ng-if="booth.reserved==true" ng-src="{{booth.company.logo_path}}" class="img img-responsive"/>
+                        <img ng-if="booth.reserved==true" ng-src="{{'..'+booth.company.logo_path}}" class="img img-responsive"/>
 
                         <!-- only the unbooked booths will open the modal view -->
                         <a href="" ng-click="openDefault(booth.event_booth_id)" ng-if="booth.reserved==false">

@@ -16,7 +16,6 @@ use yii\db\Expression;
 class UPLOADSMODEL extends Uploads
 {
     public $imageFiles;
-    public $FILE_SELECTOR;
 
     public function fields()
     {
@@ -42,9 +41,10 @@ class UPLOADSMODEL extends Uploads
 
 
         foreach ($this->imageFiles as $file) {
-            $file_name = $file->baseName . '.' . $file->extension;
+            //$file_name = $file->baseName . '.' . $file->extension;
+            $file_name = uniqid('doc_') . '.' . $file->extension; //lets rename the file to prevent name clashes
             $relative_path = $rel_folder . $file_name;
-            $save_path = $path . $file->baseName . '.' . $file->extension;
+            $save_path = $path . $file_name;
 
             $file->saveAs($save_path);
 

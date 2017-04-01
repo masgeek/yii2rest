@@ -9,11 +9,14 @@
 namespace app\api\modules\v1\models;
 
 
+use Yii;
 use app\api\models\Company;
 use app\api\models\User;
 
 class COMPANYMODEL extends Company
 {
+    public $imageFiles;
+
     /**
      * @inheritdoc
      */
@@ -47,5 +50,28 @@ class COMPANYMODEL extends Company
                 return $model->uploads;
             },
         ];
+    }
+
+    public function upload($logo_folder)
+    {
+        $uploadsFolder = Yii::$app->params['uploadsFolder'];
+        $rel_folder = $uploadsFolder . $logo_folder . '/';
+        $path = Yii::$app->basePath . $rel_folder;
+        if (!file_exists($path)) {
+            mkdir($path, 0777); //if directory does not exists create it with full permissions
+        }
+
+
+        foreach ($this->imageFiles as $file) {
+            //$file_name = $file->baseName . '.' . $file->extension;
+            $file_name = uniqid('logo_') . '.' . $file->extension; //lets rename the file to prevent name clashes
+            $relative_path = $rel_folder . $file_name;
+            $save_path = $path . $file_name;
+
+            $file->saveAs($save_path);
+
+            return $relative_path;
+
+        }
     }
 }

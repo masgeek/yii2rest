@@ -72,7 +72,9 @@ $config = [
                         'GET users' => 'citizens',
                         //'GET all-booths' => 'all-booths',
                         'GET all/{id}' => 'all',
+                        //post actions
                         'POST document' => 'document',
+                        'POST logo' => 'logo',
                     ],
                 ],
             ],

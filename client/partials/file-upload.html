@@ -1,5 +1,5 @@
 
-<div  ng-controller="UploadController">Username
+<div  ng-controller="UploadController">
     <button class="btn btn-succes btn-lg btn-block" ngf-select="upload($files)" ngf-multiple="true">Select File</button>
     Drop File:
     <div style="background: red" ngf-drop ngf-select ng-model="files" class="drop-box"
@@ -11,35 +11,8 @@
     <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
     Files:
     <ul>
-        <li ng-repeat="f in files" style="font:smaller">{{f.name}} {{f.$error}} {{f.$errorParam}}</li>
+        <li ng-repeat="f in files">{{f.name}} {{f.$error}} {{f.$errorParam}}</li>
     </ul>
     Upload Log:
     <div>{{log}}</div>
 </div>
-
-
-<style>
-    .thumb {
-        width: 24px;
-        height: 24px;
-        float: none;
-        position: relative;
-        top: 7px;
-    }
-
-    form .progress {
-        line-height: 15px;
-    }
-
-    .progress {
-        display: inline-block;
-        width: 100px;
-        border: 3px groove #CCC;
-    }
-
-    .progress div {
-        font-size: smaller;
-        background: orange;
-        width: 0;
-    }
-</style>

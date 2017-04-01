@@ -1,9 +1,11 @@
 <fieldset>
 
+    <!--
     {{booth}}
     {{reserve}}
     {{user}}
     {{company}}
+    -->
     <!-- Form Name -->
     <legend>Event Registration</legend>
 
@@ -50,7 +52,11 @@
         </div>
         <div class="col-md-4">
             <input id="logo" ng-model="company.logo_path" type="text" class="form-control" required="">
+            <button class="btn btn-success btn-block" ngf-select="logoUpload($files)" ngf-multiple="false"
+                    accept="image/*" ngf-pattern="'image/*'">Upload Logo
+            </button>
             <span class="help-block">Company Logo</span>
+            <div>{{log}}</div>
         </div>
     </div>
 
@@ -64,12 +70,12 @@
 </fieldset>
 <div class="form-group">
     <div class="col-md-10 col-md-offset-1">
-        <input type="submit" class="btn btn-primary btn-block" value="Reserve Booth"/>
+        <input type="button" class="btn btn-primary btn-block" value="Reserve Booth" ng-click="addProduct()"/>
     </div>
 </div>
 
 
-<a href="" class="btn btn-warning btn-block" ng-click="uploadDocument()">Reserve</a>
+<a href="" class="btn btn-warning btn-block" ng-click="uploadDocument()">Upload Documents</a>
 
 <ul class="list-group">
     <li class="list-group-item list-group-item-danger" ng-repeat="error in save_message">{{error.message}}</li>
