@@ -21,6 +21,8 @@
     "angular-strap": "^2.3.12",
     "angular-resource": "^1.6.3",
     "angular-ui-router": "^0.4.2",
-    "angular-css": "^1.0.8"
+    "angular-css": "^1.0.8",
+    "angular-ui": "^0.4.0",
+    "ng-dialog": "^1.0.1"
   }
 }

@@ -7,6 +7,7 @@ var app = angular.module('app', [
     'ngResource', //allows us to use $resource to call rest urls
     'ngRoute',      //$routeProvider
     'angularCSS', //Allows loading of view spcific CSS files
+    'ngDialog',//alows us to implement a popup fdialog
     'mgcrea.ngStrap',//bs-navbar, data-match-route directives
     'ui.router',
     'app.services',
@@ -24,10 +25,10 @@ app.config(function ($stateProvider) {
         templateUrl: 'partials/event-view.html',
         controller: 'BoothViewController',
         css: 'css/booth.css'
-    }).state('reserveBooth', { //state for adding a new movie
-        url: '/events/new',
-        templateUrl: 'partials/product-add.html',
-        controller: 'MovieCreateController'
+    }).state('registerUser', { //state for adding a new movie
+        url: '/events/:id/reserve',
+        templateUrl: 'partials/reserve-booth.html',
+        controller: 'ReserveViewController'
     }).state('editProduct', { //state for updating a movie
         url: '/product/:id/edit',
         templateUrl: 'partials/product-edit.html',

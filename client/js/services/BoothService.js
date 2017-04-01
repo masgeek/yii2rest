@@ -4,7 +4,7 @@
 
 
 app.factory('Booth', function ($resource) {
-    return $resource('../api/v1/booths/all-booths/:id', {id: '@id'}, {
+    return $resource('../api/v1/booths/:id', {id: '@id'}, {
         update: {
             method: 'PUT'
         }
@@ -12,12 +12,6 @@ app.factory('Booth', function ($resource) {
 });
 
 app.factory('EventBooth', function ($resource) {
-    /*return $resource('../api/v1/booths/all-booths/:id', {id: '@id'}, {
-     update: {
-     method: 'PUT'
-     }
-     });*/
-
     return $resource('../api/v1/booths/all/:id',
         {id: '@id'},
         {
@@ -25,8 +19,8 @@ app.factory('EventBooth', function ($resource) {
                 method: 'GET',
                 isArray: true,
                 /*transformResponse: function (data) {
-                    return angular.fromJson(data);
-                },*/
+                 return angular.fromJson(data);
+                 },*/
             }
         });
 });

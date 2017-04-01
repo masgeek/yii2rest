@@ -35,23 +35,21 @@
                 </div>
                 <div class="panel-body">
                     <div class="col-md-12">
-                        <img ng-if="booth.reserved==false" src="{{booth.booth_image}}" class="img img-responsive"/>
-                        <img ng-if="booth.reserved==true" src="{{booth.company.logo_path}}" class="img img-responsive"/>
+                        <img ng-if="booth.reserved==true" ng-src="{{booth.company.logo_path}}" class="img img-responsive"/>
+
+                        <!-- only the unbooked booths will open the modal view -->
+                        <a href="" ng-click="openDefault(booth.event_booth_id)" ng-if="booth.reserved==false">
+                            <img ng-src="{{booth.booth_image}}" class="img img-responsive"/>
+                        </a>
                     </div>
-                </div>
-                <div class="panel-footer">
-                    <!--<button class="btn btn-success btn-block">Reserve Booth</button>-->
                 </div>
             </div>
             <!-- panel for showing company details -->
             <div class="panel panel-primary" ng-if="booth.reserved==true">
                 <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" href="#collapse{{booth.event_booth_id}}">Booked User
-                            Details</a>
-                    </h4>
+                    <h4 class="panel-title">Booked UserDetails</h4>
                 </div>
-                <div id="collapse{{booth.event_booth_id}}" class="panel-collapse collapses">
+                <div id="collapse{{booth.event_booth_id}}">
                     <div class="panel-footer">
                         <p><strong>Company Name:</strong> {{booth.company.company_name}}</p>
                         <p><strong>Company Admin:</strong> {{booth.company.company_admin}}</p>

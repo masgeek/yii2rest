@@ -1,0 +1,22 @@
+<div class="panel-group">
+    <div class="panel panel-primary">
+        <div class="panel-body">
+            <div class="col-md-12">
+                <img ng-src="{{booth_detail.booth_image}}" class="img img-responsive"/>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-success">
+        <div class="panel-body">
+            <div class="col-md-10 col-md-offset-1">
+                <ul class="list-group">
+                    <li class="list-group-item"><strong>Booth Name:</strong> {{booth_detail.event_booth_name}}</li>
+                    <li class="list-group-item"><strong>Booth Price:</strong> ${{booth_detail.booth_price}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <a href="" class="btn btn-warning btn-block" ng-click="reserveBooth(booth_detail.event_booth_id)">Reserve</a>
+        </div>
+    </div>
+</div>

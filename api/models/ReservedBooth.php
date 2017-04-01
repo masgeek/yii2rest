@@ -10,7 +10,7 @@ use Yii;
  * @property int $reserved_booth_id
  * @property int $event_booth_id
  * @property int $user_id
- * @property int $reserved
+ * @property bool $reserved
  *
  * @property EventBooth $eventBooth
  * @property User $user
@@ -32,7 +32,8 @@ class ReservedBooth extends \yii\db\ActiveRecord
     {
         return [
             [['event_booth_id', 'user_id'], 'required'],
-            [['event_booth_id', 'user_id', 'reserved'], 'integer'],
+            [['event_booth_id', 'user_id'], 'integer'],
+            [['reserved'], 'boolean'],
             [['event_booth_id'], 'exist', 'skipOnError' => true, 'targetClass' => EventBooth::className(), 'targetAttribute' => ['event_booth_id' => 'event_booth_id']],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'user_id']],
         ];
