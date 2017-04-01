@@ -42,6 +42,7 @@ class Company extends \yii\db\ActiveRecord
             [['company_admin', 'email'], 'string', 'max' => 30],
             [['phone'], 'string', 'max' => 25],
             [['logo_path'], 'string', 'max' => 255],
+            [['email'], 'unique'],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'user_id']],
         ];
     }

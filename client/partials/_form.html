@@ -2,6 +2,7 @@
 
     {{booth}}
     {{reserve}}
+    {{user}}
     {{company}}
     <!-- Form Name -->
     <legend>Event Registration</legend>
@@ -9,47 +10,64 @@
     <!-- Text input-->
     <div class="form-group">
         <div class="col-md-6">
-            <input id="username" name="reserve.full_names" type="text" placeholder="Full Names" class="form-control" required="">
+            <input id="username" ng-model="user.full_names" type="text" placeholder="Full Names" class="form-control"
+                   required="">
             <span class="help-block">Full Names</span>
         </div>
         <div class="col-md-6">
-            <input id="user_email" name="reserve.email" type="email" placeholder="Email Address" class="form-control" required>
+            <input id="user_email" ng-model="user.email" type="email" placeholder="Email Address" class="form-control"
+                   required>
             <span class="help-block">Email Address</span>
         </div>
     </div>
 
+
+    <legend>Company Details</legend>
     <div class="form-group">
         <div class="col-md-6">
-            <input id="company_name" name="company.company_name" type="text" placeholder="Full Names" class="form-control" required="">
-            <span class="help-block">Full Names</span>
+            <input id="company_name" ng-model="company.company_name" type="text" placeholder="Company Name"
+                   class="form-control" required="">
+            <span class="help-block">Company Name</span>
         </div>
         <div class="col-md-6">
-            <input id="company_admin" name="company.company_admin" type="text" placeholder="Full Names" class="form-control" required="">
-            <span class="help-block">Full Names</span>
+            <input id="company_admin" ng-model="company.company_admin" type="text" placeholder="Company Administrator"
+                   class="form-control" required="">
+            <span class="help-block">Company Administrator</span>
         </div>
     </div>
     <hr/>
-    <legend>Company Details</legend>
     <div class="form-group">
         <div class="col-md-4">
-            <input id="company_email" name="company.email" type="text" placeholder="Full Names" class="form-control" required="">
-            <span class="help-block">Full Names</span>
+            <input id="company_email" ng-model="company.email" type="email" placeholder="Company Email"
+                   class="form-control"
+                   required="">
+            <span class="help-block">Company Email</span>
         </div>
         <div class="col-md-4">
-            <input id="phone" name="company.phone" type="text" placeholder="Full Names" class="form-control" required="">
-            <span class="help-block">Full Names</span>
+            <input id="phone" ng-model="company.phone" type="text" placeholder="Company Phone" class="form-control"
+                   required="">
+            <span class="help-block">Company Phone</span>
         </div>
         <div class="col-md-4">
-            <input id="logo" name="company.logo_path" type="text" placeholder="Full Names" class="form-control" required="">
-            <span class="help-block">Full Names</span>
+            <input id="logo" ng-model="company.logo_path" type="text" class="form-control" required="">
+            <span class="help-block">Company Logo</span>
         </div>
     </div>
 
     <div class="form-group">
         <div class="col-md-12">
-            <textarea class="form-control" id="address" name="company.address"></textarea>
+            <textarea class="form-control" id="address" ng-model="company.address"></textarea>
             <span class="help-block">Company Address</span>
         </div>
     </div>
 
 </fieldset>
+<div class="form-group">
+    <div class="col-md-10 col-md-offset-1">
+        <input type="submit" class="btn btn-primary btn-block" value="Reserve Booth"/>
+    </div>
+</div>
+
+<ul class="list-group">
+    <li class="list-group-item list-group-item-danger" ng-repeat="error in save_message">{{error.message}}</li>
+</ul>

@@ -3,6 +3,14 @@
  */
 'use strict'
 
+app.factory('User', function ($resource) {
+    return $resource('../api/v1/users/:id', {id: '@id'}, {
+        update: {
+            method: 'PUT'
+        }
+    });
+});
+
 app.factory('Reserve', function ($resource) {
     return $resource('../api/v1/reserves/:id', {id: '@id'}, {
         update: {
