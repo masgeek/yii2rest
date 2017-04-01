@@ -37,14 +37,6 @@ app.controller('ReserveViewController', function ($scope, $state, $timeout, $sta
             .catch(function (error) {$scope.save_message = (error.data);})
     }
 
-    //scope for showing the file upload modal
-    //this function opens the modal dialog for booth details
-    $scope.uploadDocument = function () { //get details of the single booth and open it in a modal
-        ngDialog.open({
-            template: 'partials/file-upload.html',
-        });
-    };
-
     //company logo upload
     $scope.$watch('files', function () {
         $scope.logoUpload($scope.files);
@@ -79,49 +71,6 @@ app.controller('ReserveViewController', function ($scope, $state, $timeout, $sta
                     }, null, function (evt) {
                         var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
                         $scope.log = 'progress: ' + progressPercentage + '% ' + evt.config.data.file.name;
-                    });
-                }
-            }
-        }
-    };
-});
-
-
-app.controller('UploadController', function ($scope, $timeout, Upload) {
-    $scope.$watch('files', function () {
-        $scope.upload($scope.files);
-    });
-    $scope.$watch('file', function () {
-        if ($scope.file != null) {
-            $scope.files = [$scope.file];
-        }
-    });
-    $scope.log = '';
-
-    $scope.upload = function (files) {
-        if (files && files.length) {
-            for (var i = 0; i < files.length; i++) {
-                var file = files[i];
-                if (!file.$error) {
-                    Upload.upload({
-                        url: '../api/v1/uploads/document', //save to the uploads endpoint
-                        data: {
-                            company_id: 'mas',
-                            file: file
-                        }
-                    }).then(function (resp) {
-                        $timeout(function () {
-                            $scope.log = 'file: ' +
-                                resp.config.data.file.name +
-                                ', Response: ' + JSON.stringify(resp.data) +
-                                '\n' + $scope.log;
-                        });
-                    }, null, function (evt) {
-                        var progressPercentage = parseInt(100.0 *
-                            evt.loaded / evt.total);
-                        $scope.log = 'progress: ' + progressPercentage +
-                            '% ' + evt.config.data.file.name + '\n' +
-                            $scope.log;
                     });
                 }
             }

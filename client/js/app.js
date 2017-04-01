@@ -30,10 +30,10 @@ app.config(function ($stateProvider) {
         url: '/events/:id/reserve',
         templateUrl: 'partials/reserve-booth.html',
         controller: 'ReserveViewController'
-    }).state('editProduct', { //state for updating a movie
-        url: '/product/:id/edit',
-        templateUrl: 'partials/product-edit.html',
-        controller: 'ProductEditController'
+    }).state('uploadDocument', { //state for updating a movie
+        url: '/events/:id/document',
+        templateUrl: 'partials/file-upload.html',
+        controller: 'DocumentViewController'
     });
 }).run(function ($state) {
     $state.go('events'); //make a transition to products state when app starts

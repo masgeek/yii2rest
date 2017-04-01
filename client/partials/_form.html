@@ -44,7 +44,8 @@
             <span class="help-block">Company Phone</span>
         </div>
         <div class="col-md-4">
-            <input id="logo" ng-model="company.logo_path" type="text" class="form-control" required="" autocomplete="off">
+            <input id="logo" ng-model="company.logo_path" type="text" class="form-control" required=""
+                   autocomplete="off">
             <button class="btn btn-success btn-block" ngf-select="logoUpload($files)" ngf-multiple="false"
                     accept="image/*" ngf-pattern="'image/*'">Upload Logo
             </button>
@@ -68,7 +69,7 @@
 </div>
 
 
-<a href="" class="btn btn-warning btn-block" ng-click="uploadDocument()">Upload Documents</a>
+<a class="btn btn-primary btn-block" ui-sref="uploadDocument({id:company.company_id})">Upload Documents</a>
 
 <ul class="list-group">
     <li class="list-group-item list-group-item-danger" ng-repeat="error in save_message">{{error.message}}</li>
