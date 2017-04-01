@@ -9,6 +9,7 @@
 namespace app\api\modules\v1\models;
 
 
+use app\api\models\Event;
 use app\api\models\EventBooth;
 
 class BOOTHMODEL extends EventBooth
@@ -28,10 +29,8 @@ class BOOTHMODEL extends EventBooth
             'booth_image',
             'description',
             'event' => function ($model) {
-                $data = null;
-                if ($model->reservedBooths != null) {
-                    $data = EVENTMODEL::findOne(['event_id' => $model->event_id]);
-                }
+                //we wil use the base model here so that we return only one result
+                $data = Event::findOne(['event_id' => $model->event_id]);
                 return $data;
             },
             'reserved' => function ($model) { //return tru if booth is reserved and false if not

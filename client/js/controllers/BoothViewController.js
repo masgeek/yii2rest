@@ -29,10 +29,4 @@ app.controller('BoothViewController', function ($scope, $state, $stateParams, Bo
         //next redirected to the view we are interested in
         $state.go('registerUser', {id: $event_booth_id}); // on success go back to home i.e. products state.
     };
-
-    $scope.registerUser = function () { //Issues a GET request to /api/products/:id to get a movie to update
-        //$scope.events = Event.get({id: $stateParams.id});
-        alert('we are here');
-    };
-
 });
