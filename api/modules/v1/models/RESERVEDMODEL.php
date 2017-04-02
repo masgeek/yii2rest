@@ -14,7 +14,7 @@ use yii\helpers\Url;
 use yii\web\Link;
 use yii\web\Linkable;
 
-class RESERVEDMODEL extends ReservedBooth implements Linkable
+class RESERVEDMODEL extends ReservedBooth //implements Linkable
 {
     public $reserved_by;
     public $booth_name;
@@ -35,7 +35,7 @@ class RESERVEDMODEL extends ReservedBooth implements Linkable
         ];
     }
 
-
+/*
      public function getLinks()
      {
          return [
@@ -45,5 +45,6 @@ class RESERVEDMODEL extends ReservedBooth implements Linkable
              'index' => Url::to(['users'], true),
          ];
      }
+*/
 
 }

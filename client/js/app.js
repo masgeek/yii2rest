@@ -36,7 +36,7 @@ app.config(function ($stateProvider) {
         controller: 'DocumentViewController'
     }).state('boothSummary', {
         url: '/events/:event_id/:booth_id/boothview',
-        templateUrl: 'partials/booth-view.html',
+        templateUrl: 'partials/booth-summary.html',
         controller: 'BoothDetailViewController'
     });
 }).run(function ($state) {

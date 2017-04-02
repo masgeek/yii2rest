@@ -7,8 +7,8 @@
 
 app.controller('DocumentViewController', function ($scope, $state, $stateParams, $timeout, Upload, Summary, Reserve) {
     $scope.summary = Summary.get({id: $stateParams.id}, function () {
-        console.log($scope.summary.reserved_booth_id);
-        //noe get the reseved booth update instance
+        console.log($scope.summary);
+        console.log($stateParams);
     });
 
 
@@ -52,11 +52,10 @@ app.controller('DocumentViewController', function ($scope, $state, $stateParams,
         }
     };
 
-    $scope.confirmReservation = function ($event_id, $reserved_booth_id) {
+    $scope.confirmReservation = function ($event_id, $booth_id, $reserved_booth_id) {
         var reservation = Reserve.get({id: $reserved_booth_id}, function () {
-            reservation.reserved = false;
+            reservation.reserved = true;
             Reserve.update({id: $reserved_booth_id}, reservation);
-
             console.log(reservation);
         });
 
@@ -65,6 +64,6 @@ app.controller('DocumentViewController', function ($scope, $state, $stateParams,
         //next redirected to the view we are interested in
 
 
-        //$state.go('boothSummary', {event_id: $event_id, booth_id: $reserved_booth_id}); // on success go back to home i.e. products state.
+        $state.go('boothSummary', {event_id: $event_id, booth_id: $booth_id}); // on success go back to home i.e. products state.
     };
 });
