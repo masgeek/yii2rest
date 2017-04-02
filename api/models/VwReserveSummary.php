@@ -14,6 +14,7 @@ use Yii;
  * @property string $event_name
  * @property bool $reserved
  * @property int $event_booth_id
+ * @property int $event_id
  */
 class VwReserveSummary extends \yii\db\ActiveRecord
 {
@@ -31,7 +32,7 @@ class VwReserveSummary extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['company_id', 'reserved_booth_id', 'event_booth_id'], 'integer'],
+            [['company_id', 'reserved_booth_id', 'event_booth_id', 'event_id'], 'integer'],
             [['company_name', 'event_booth_name', 'event_name'], 'required'],
             [['reserved'], 'boolean'],
             [['company_name', 'event_booth_name', 'event_name'], 'string', 'max' => 50],
@@ -51,6 +52,7 @@ class VwReserveSummary extends \yii\db\ActiveRecord
             'event_name' => 'Event Name',
             'reserved' => 'Reserved',
             'event_booth_id' => 'Event Booth ID',
+            'event_id' => 'Event ID',
         ];
     }
 }

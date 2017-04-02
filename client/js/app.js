@@ -35,9 +35,9 @@ app.config(function ($stateProvider) {
         templateUrl: 'partials/file-upload.html',
         controller: 'DocumentViewController'
     }).state('boothSummary', {
-        url: '/events/:id/boothview',
-        templateUrl: 'partials/file-upload.html',
-        controller: 'BoothSummaryViewController'
+        url: '/events/:event_id/:booth_id/boothview',
+        templateUrl: 'partials/booth-view.html',
+        controller: 'BoothDetailViewController'
     });
 }).run(function ($state) {
     $state.go('events'); //make a transition to products state when app starts

@@ -13,13 +13,9 @@ app.factory('User', function ($resource) {
 
 
 app.factory("Reserve", function ($resource) {
-    return $resource(
-        "../api/v1/reserves/:id",
-        {id: "@id" },
+    return $resource("../api/v1/reserves/:id",{id: "@id" },
         {
             "update": {method: "PUT"},
-            "reviews": {'method': 'GET', 'params': {'reviews_only': "true"}, isArray: true}
-
         }
     );
 });;

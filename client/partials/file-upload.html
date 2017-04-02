@@ -1,19 +1,19 @@
+<button class="btn btn-succes btn-lg btn-block" ngf-select="upload($files)" ngf-multiple="true">Select File</button>
 
-    <button class="btn btn-succes btn-lg btn-block" ngf-select="upload($files)" ngf-multiple="true">Select File</button>
-    Drop File:
-    <div style="background: red" ngf-drop ngf-select ng-model="files" class="drop-box"
-         ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="false"
-         accept="image/*,application/pdf"
-         ngf-pattern="'image/*,application/pdf'">Drop files here
-    </div>
+<!-- drag drop box -->
+<div style="background: red" ngf-drop ngf-select ng-model="files" class="drop-box"
+     ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="false"
+     accept="image/*,application/pdf"
+     ngf-pattern="'image/*,application/pdf'">Drop files here
+</div>
 
-    <a class="btn btn-primary btn-block" ui-sref="events">Events Map</a>
+<!--
+<a class="btn btn-primary btn-block" ui-sref="events">Events Map</a>
+-->
 
-    <a class="btn btn-primary btn-block" ng-click="confirmReservation(summary.reserved_booth_id)">Confirm Reservation</a>
-    <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
-    Files:
-    <ul>
-        <li ng-repeat="f in files">{{f.name}} {{f.$error}} {{f.$errorParam}}</li>
-    </ul>
-    Upload Log:
-    <div>{{log}}</div>
+<a class="btn btn-primary btn-block" ng-click="confirmReservation(summary.event_id,summary.reserved_booth_id)">Confirm
+    Reservation</a>
+<div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+
+<!-- show the upload log of the files -->
+<div>{{log}}</div>

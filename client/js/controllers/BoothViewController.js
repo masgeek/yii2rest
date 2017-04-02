@@ -56,3 +56,14 @@ app.controller('BoothSummaryViewController', function ($scope, $state, $statePar
         $state.go('registerUser', {id: $event_booth_id}); // on success go back to home i.e. products state.
     };
 });
+
+app.controller('BoothDetailViewController', function ($scope, $state, $stateParams, Booth, EventBooth) {
+    $scope.booth = EventBooth.get({id: $stateParams.event_id}); //Get a single product. Issues a GET to /api/products/:id
+
+    console.log($stateParams);
+
+    $scope.booth_detail = Booth.get({id: $stateParams.booth_id}, function () {
+        console.log($scope.booth_detail);
+    });
+
+});
