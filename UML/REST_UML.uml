@@ -3,55 +3,83 @@
   <ID>PHP</ID>
   <OriginalElement>\app\api\modules\v1\module</OriginalElement>
   <nodes>
-    <node x="284.0" y="190.0">\app\api\modules\v1\models\USERMODEL</node>
-    <node x="24.0" y="190.0">\app\api\modules\v1\models\COMPANYMODEL</node>
-    <node x="553.0" y="190.0">\app\api\modules\v1\models\BOOTHMODEL</node>
-    <node x="39.0" y="543.0">\app\api\modules\v1\models\RESERVEDMODEL</node>
-    <node x="-8.0" y="640.0">\app\api\models\VwStandSummary</node>
-    <node x="-8.0" y="353.0">\app\api\models\ReservedBooth</node>
-    <node x="234.0" y="353.0">\app\api\models\Uploads</node>
-    <node x="250.0" y="0.0">\app\api\models\User</node>
-    <node x="456.0" y="353.0">\app\api\models\Event</node>
-    <node x="500.0" y="0.0">\app\api\models\EventBooth</node>
-    <node x="194.0" y="640.0">\app\api\models\VwReserveSummary</node>
-    <node x="267.0" y="521.0">\app\api\modules\v1\models\UPLOADSMODEL</node>
-    <node x="499.0" y="521.0">\app\api\modules\v1\models\EVENTMODEL</node>
-    <node x="0.0" y="0.0">\app\api\models\Company</node>
+    <node x="2071.0" y="604.0">\app\api\modules\v1\models\USERMODEL</node>
+    <node x="2680.0" y="714.0">\app\api\modules\v1\models\COMPANYMODEL</node>
+    <node x="959.0" y="670.0">\app\api\modules\v1\models\BOOTHMODEL</node>
+    <node x="349.0" y="313.0">\app\api\modules\v1\models\RESERVEDMODEL</node>
+    <node x="0.0" y="0.0">\app\api\models\ReservedBooth</node>
+    <node x="2923.0" y="714.0">\app\api\models\Uploads</node>
+    <node x="1719.0" y="313.0">\app\api\models\User</node>
+    <node x="1196.0" y="670.0">\app\api\models\Event</node>
+    <node x="563.0" y="313.0">\app\api\models\EventBooth</node>
+    <node x="3276.0" y="983.0">\app\api\modules\v1\models\UPLOADSMODEL</node>
+    <node x="1576.0" y="1005.0">\app\api\modules\v1\models\EVENTMODEL</node>
+    <node x="2248.0" y="313.0">\app\api\models\Company</node>
   </nodes>
   <notes />
   <edges>
+    <edge source="\app\api\models\ReservedBooth" target="\app\api\models\EventBooth">
+      <point x="0.0" y="0.0" />
+      <point x="741.0" y="136.5" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="\app\api\models\Event" target="\app\api\models\EventBooth">
+      <point x="0.0" y="0.0" />
+      <point x="1364.0" y="471.5" />
+      <point x="0.0" y="0.0" />
+    </edge>
     <edge source="\app\api\modules\v1\models\RESERVEDMODEL" target="\app\api\models\ReservedBooth">
-      <point x="0.0" y="-26.0" />
-      <point x="0.0" y="70.0" />
+      <point x="0.0" y="0.0" />
+      <point x="436.0" y="136.5" />
+      <point x="0.0" y="0.0" />
     </edge>
     <edge source="\app\api\modules\v1\models\EVENTMODEL" target="\app\api\models\Event">
-      <point x="0.0" y="-26.0" />
-      <point x="0.0" y="59.0" />
+      <point x="0.0" y="0.0" />
+      <point x="1625.5" y="817.5" />
+      <point x="0.0" y="0.0" />
     </edge>
     <edge source="\app\api\modules\v1\models\COMPANYMODEL" target="\app\api\models\Company">
-      <point x="0.0" y="-59.0" />
-      <point x="0.0" y="70.0" />
+      <point x="0.0" y="0.0" />
+      <point x="2781.5" y="493.5" />
+      <point x="0.0" y="0.0" />
     </edge>
     <edge source="\app\api\modules\v1\models\UPLOADSMODEL" target="\app\api\models\Uploads">
-      <point x="0.0" y="-37.0" />
-      <point x="0.0" y="59.0" />
+      <point x="0.0" y="0.0" />
+      <point x="3357.5" y="828.5" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="\app\api\models\User" target="\app\api\models\ReservedBooth">
+      <point x="0.0" y="0.0" />
+      <point x="1871.0" y="136.5" />
+      <point x="0.0" y="0.0" />
     </edge>
     <edge source="\app\api\modules\v1\models\BOOTHMODEL" target="\app\api\models\EventBooth">
-      <point x="0.0" y="-26.0" />
-      <point x="0.0" y="70.0" />
+      <point x="0.0" y="0.0" />
+      <point x="1057.5" y="471.5" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="\app\api\models\Uploads" target="\app\api\models\Company">
+      <point x="0.0" y="0.0" />
+      <point x="3079.5" y="493.5" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="\app\api\models\Company" target="\app\api\models\ReservedBooth">
+      <point x="0.0" y="0.0" />
+      <point x="2444.0" y="136.5" />
+      <point x="0.0" y="0.0" />
     </edge>
     <edge source="\app\api\modules\v1\models\USERMODEL" target="\app\api\models\User">
-      <point x="0.0" y="-48.0" />
-      <point x="0.0" y="70.0" />
+      <point x="0.0" y="0.0" />
+      <point x="2135.5" y="438.5" />
+      <point x="0.0" y="0.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="52.5" y="315.5" />
-  <SelectedNodes>
-    <node>\app\api\modules\v1\models\COMPANYMODEL</node>
-  </SelectedNodes>
+  <settings layout="Hierarchic Group" zoom="1.0" x="1058.5" y="375.5" />
+  <SelectedNodes />
   <Categories>
     <Category>Constructors</Category>
     <Category>Methods</Category>
+    <Category>Fields</Category>
   </Categories>
   <VISIBILITY>public</VISIBILITY>
 </Diagram>
