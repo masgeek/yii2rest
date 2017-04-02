@@ -28,7 +28,7 @@ class UploadController extends ActiveController
         if (Yii::$app->request->isPost) {
             $model->imageFiles = UploadedFile::getInstancesByName('file'); //getInstances($model, 'file');
 
-            $model->upload($company_id);
+            $model->uploadDocument($company_id);
             $model->save();
         } else {
             $output = ['error' => 'No files were processed.'];

@@ -62,7 +62,7 @@ class COMPANYMODEL extends Company
         ];
     }
 
-    public function upload($logo_folder)
+    public function uploadLogo($logo_folder)
     {
         $uploadsFolder = Yii::$app->params['uploadsFolder'];
         $rel_folder = $uploadsFolder . $logo_folder . '/';

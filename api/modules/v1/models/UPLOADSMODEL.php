@@ -17,6 +17,9 @@ class UPLOADSMODEL extends Uploads
 {
     public $imageFiles;
 
+    /*
+     * @ingeritdoc
+     */
     public function fields()
     {
         return [
@@ -30,7 +33,11 @@ class UPLOADSMODEL extends Uploads
         ];
     }
 
-    public function upload($company_id)
+    /**
+     * Processes the files for uploading
+     * @param $company_id
+     */
+    public function uploadDocument($company_id)
     {
         $uploadsFolder = Yii::$app->params['uploadsFolder'];
         $rel_folder = $uploadsFolder . $company_id . '/';
@@ -52,17 +59,5 @@ class UPLOADSMODEL extends Uploads
             $this->document_name = $file_base_name;
             $this->company_id = $company_id;
         }
-    }
-
-    public function beforeSave($insert)
-    {
-        $date = new Expression('NOW()');
-        if (parent::beforeSave($insert)) {
-            if ($this->isNewRecord) {
-
-            }
-            return true;
-        }
-        return false;
     }
 }

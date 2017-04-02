@@ -29,7 +29,7 @@ class CompanyController extends ActiveController
         if (Yii::$app->request->isPost) {
             $model->imageFiles = UploadedFile::getInstancesByName('file'); //getInstances($model, 'file');
 
-            $t = $model->upload($logo_folder);
+            $t = $model->uploadLogo($logo_folder);
 
             $output = ['file_path' => $t];
         }
