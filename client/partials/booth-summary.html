@@ -4,24 +4,26 @@
         <div class="panel panel-default">
             <div class="panel-heading">Reserved booth details</div>
             <div class="panel-body">
-                <div class="col-md-8 col-md-offset-2">
-                    <img ng-src="{{booth_detail.booth_image}}" class="img img-responsive"/>
+                <div class="row">
+                    <div class="col-md-4">
+                        <img ng-src="{{booth_detail.booth_image}}" class="img img-responsive"/>
+                    </div>
+                    <div class="col-md-8">
+                        <ul class="list-group">
+                            <li class="list-group-item"><strong>Event Name:</strong>{{booth_detail.event.event_name}}
+                            </li>
+                            <li class="list-group-item"><strong>Booth Name:</strong> {{booth_detail.event_booth_name}}
+                            </li>
+                            <li class="list-group-item"><strong>Booth Price:</strong> ${{booth_detail.booth_price}}</li>
+                            <li class="list-group-item"><strong>Description:</strong> {{booth_detail.description}}</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-md-10 col-md-offset-1">
-                    <ul class="list-group">
-                        <li class="list-group-item"><strong>Event Name:</strong>{{booth_detail.event.event_name}}</li>
-                        <li class="list-group-item"><strong>Booth Name:</strong> {{booth_detail.event_booth_name}}</li>
-                        <li class="list-group-item"><strong>Booth Price:</strong> ${{booth_detail.booth_price}}</li>
-                        <li class="list-group-item"><strong>Description:</strong> {{booth_detail.description}}</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="panel-footer">
             </div>
         </div>
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <h4 class="panel-title">Booked User Details</h4>
+                <h4 class="panel-title">Company Details</h4>
             </div>
             <div class="panel-body">
                 <div class="row">
@@ -29,7 +31,7 @@
                         <img ng-src="{{'..'+booth_detail.company.logo_path}}" class="img img-responsive thumbnail"
                              width="120px"/>
                     </div>
-                    <div class="col-md-4 pull-right">
+                    <div class="col-md-8 pull-right">
                         <p><strong>Company Name:</strong> {{booth_detail.company.company_name}}</p>
                         <p><strong>Company Admin:</strong> {{booth_detail.company.company_admin}}</p>
                         <p><strong>Phone Number:</strong> {{booth_detail.company.phone}}</p>
@@ -42,7 +44,7 @@
                 <div class="row">
                     <div class="list-group-" ng-repeat="document in booth_detail.company.uploads">
                         <a class="list-group-item" target="_self" href="{{'..'+document.document_path}}"
-                           download="{{document.document_name}}">Download Document {{document.document_name}}</a>
+                           download="{{document.document_name}}">Download Document {{document.document_name}} <span class="glyphicon glyphicon-download-alt pull-right"></span></a>
                     </div>
                 </div>
             </div>
