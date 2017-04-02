@@ -4,7 +4,7 @@
   <OriginalElement>\app\api\modules\v1\module</OriginalElement>
   <nodes>
     <node x="325.0" y="395.0">\app\api\modules\v1\controllers\EventController</node>
-    <node x="0.0" y="470.0">\app\api\modules\v1\controllers\UserController</node>
+    <node x="706.0" y="79.0">\app\api\modules\v1\controllers\UserController</node>
     <node x="377.75" y="80.0">\app\api\modules\v1\models\USERMODEL</node>
     <node x="226.0" y="80.0">\app\api\modules\v1\models\COMPANYMODEL</node>
     <node x="247.75" y="240.0">\app\api\modules\v1\models\BOOTHMODEL</node>
@@ -36,6 +36,10 @@
       <point x="454.75" y="295.0" />
       <point x="661.25" y="295.0" />
       <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="\app\api\modules\v1\controllers\UserController" target="\app\api\modules\v1\models\USERMODEL">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
     </edge>
     <edge source="\app\api\modules\v1\models\COMPANYMODEL" target="\app\api\models\Company">
       <point x="19.749999999999943" y="-15.0" />
@@ -100,7 +104,7 @@
   </edges>
   <settings layout="Hierarchic Group" zoom="1.0" x="663.5" y="357.5" />
   <SelectedNodes>
-    <node>\app\api\models\VwStandSummary</node>
+    <node>\app\api\modules\v1\controllers\UserController</node>
   </SelectedNodes>
   <Categories />
   <VISIBILITY>public</VISIBILITY>
