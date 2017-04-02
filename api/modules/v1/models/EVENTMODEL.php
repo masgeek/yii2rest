@@ -19,6 +19,8 @@ class EVENTMODEL extends Event
             'event_id',
             'event_name',
             'event_location',
+            'event_start_date',
+            'event_end_date',
             'event_lat',
             'event_long',
             'event_booths' => function ($model) { //return all booths under this event

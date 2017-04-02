@@ -10,7 +10,8 @@ use Yii;
  * @property int $event_id
  * @property string $event_name
  * @property string $event_location City of the event
- * @property string $event_date
+ * @property string $event_start_date
+ * @property string $event_end_date
  * @property double $event_lat Map lattitude
  * @property double $event_long Map longitude
  *
@@ -33,7 +34,7 @@ class Event extends \yii\db\ActiveRecord
     {
         return [
             [['event_name', 'event_location', 'event_lat', 'event_long'], 'required'],
-            [['event_date'], 'safe'],
+            [['event_start_date', 'event_end_date'], 'safe'],
             [['event_lat', 'event_long'], 'number'],
             [['event_name', 'event_location'], 'string', 'max' => 50],
         ];
@@ -48,7 +49,8 @@ class Event extends \yii\db\ActiveRecord
             'event_id' => 'Event ID',
             'event_name' => 'Event Name',
             'event_location' => 'Event Location',
-            'event_date' => 'Event Date',
+            'event_start_date' => 'Event Start Date',
+            'event_end_date' => 'Event End Date',
             'event_lat' => 'Event Lat',
             'event_long' => 'Event Long',
         ];

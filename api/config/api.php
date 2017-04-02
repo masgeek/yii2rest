@@ -61,7 +61,7 @@ $config = [
                         'v1/upload',
                         'v1/user',
                         'v1/company',
-                        'v1/day',
+                        'v1/report',
                     ],
                     //'GET,HEAD <id:\d+>/booth' => 'booth/all-booths',
                     'tokens' => [
