@@ -24,17 +24,27 @@
                 <h4 class="panel-title">Booked User Details</h4>
             </div>
             <div class="panel-body">
-                <div class="col-md-8 col-md-offset-2">
-                    <img ng-src="{{'..'+booth_detail.company.logo_path}}" class="img img-responsive thumbnail" width="120px"/>
+                <div class="row">
+                    <div class="col-md-4">
+                        <img ng-src="{{'..'+booth_detail.company.logo_path}}" class="img img-responsive thumbnail"
+                             width="120px"/>
+                    </div>
+                    <div class="col-md-4 pull-right">
+                        <p><strong>Company Name:</strong> {{booth_detail.company.company_name}}</p>
+                        <p><strong>Company Admin:</strong> {{booth_detail.company.company_admin}}</p>
+                        <p><strong>Phone Number:</strong> {{booth_detail.company.phone}}</p>
+                        <p><strong>Email Address:</strong> {{booth_detail.company.email}}</p>
+                        <strong>Address</strong>
+                        <address>{{booth.company.address}}</address>
+                    </div>
                 </div>
-                <p><strong>Company Name:</strong> {{booth_detail.company.company_name}}</p>
-                <p><strong>Company Admin:</strong> {{booth_detail.company.company_admin}}</p>
-                <p><strong>Phone Number:</strong> {{booth_detail.company.phone}}</p>
-                <p><strong>Email Address:</strong> {{booth_detail.company.email}}</p>
-                <strong>Address</strong>
-                <address>{{booth.company.address}}</address>
-            </div>
-            <div class="panel-footer">
+                <!-- uploaded documents -->
+                <div class="row">
+                    <div class="list-group-" ng-repeat="document in booth_detail.company.uploads">
+                        <a class="list-group-item" target="_self" href="{{'..'+document.document_path}}"
+                           download="{{document.document_name}}">Download Document {{document.document_name}}</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -41,7 +41,7 @@ class UPLOADSMODEL extends Uploads
 
 
         foreach ($this->imageFiles as $file) {
-            //$file_name = $file->baseName . '.' . $file->extension;
+            $file_base_name = $file->baseName;
             $file_name = uniqid('doc_') . '.' . $file->extension; //lets rename the file to prevent name clashes
             $relative_path = $rel_folder . $file_name;
             $save_path = $path . $file_name;
@@ -49,7 +49,7 @@ class UPLOADSMODEL extends Uploads
             $file->saveAs($save_path);
 
             $this->document_path = $relative_path;
-            $this->document_name = $file_name;
+            $this->document_name = $file_base_name;
             $this->company_id = $company_id;
         }
     }

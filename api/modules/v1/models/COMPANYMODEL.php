@@ -73,7 +73,7 @@ class COMPANYMODEL extends Company
 
 
         foreach ($this->imageFiles as $file) {
-            //$file_name = $file->baseName . '.' . $file->extension;
+            $file_base_name = $file->baseName;
             $file_name = uniqid('logo_') . '.' . $file->extension; //lets rename the file to prevent name clashes
             $relative_path = $rel_folder . $file_name;
             $save_path = $path . $file_name;
