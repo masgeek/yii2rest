@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>PHP</ID>
+  <OriginalElement>\app\api\modules\v1\module</OriginalElement>
+  <nodes>
+    <node x="284.0" y="190.0">\app\api\modules\v1\models\USERMODEL</node>
+    <node x="24.0" y="190.0">\app\api\modules\v1\models\COMPANYMODEL</node>
+    <node x="553.0" y="190.0">\app\api\modules\v1\models\BOOTHMODEL</node>
+    <node x="39.0" y="543.0">\app\api\modules\v1\models\RESERVEDMODEL</node>
+    <node x="-8.0" y="640.0">\app\api\models\VwStandSummary</node>
+    <node x="-8.0" y="353.0">\app\api\models\ReservedBooth</node>
+    <node x="234.0" y="353.0">\app\api\models\Uploads</node>
+    <node x="250.0" y="0.0">\app\api\models\User</node>
+    <node x="456.0" y="353.0">\app\api\models\Event</node>
+    <node x="500.0" y="0.0">\app\api\models\EventBooth</node>
+    <node x="194.0" y="640.0">\app\api\models\VwReserveSummary</node>
+    <node x="267.0" y="521.0">\app\api\modules\v1\models\UPLOADSMODEL</node>
+    <node x="499.0" y="521.0">\app\api\modules\v1\models\EVENTMODEL</node>
+    <node x="0.0" y="0.0">\app\api\models\Company</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="\app\api\modules\v1\models\RESERVEDMODEL" target="\app\api\models\ReservedBooth">
+      <point x="0.0" y="-26.0" />
+      <point x="0.0" y="70.0" />
+    </edge>
+    <edge source="\app\api\modules\v1\models\EVENTMODEL" target="\app\api\models\Event">
+      <point x="0.0" y="-26.0" />
+      <point x="0.0" y="59.0" />
+    </edge>
+    <edge source="\app\api\modules\v1\models\COMPANYMODEL" target="\app\api\models\Company">
+      <point x="0.0" y="-59.0" />
+      <point x="0.0" y="70.0" />
+    </edge>
+    <edge source="\app\api\modules\v1\models\UPLOADSMODEL" target="\app\api\models\Uploads">
+      <point x="0.0" y="-37.0" />
+      <point x="0.0" y="59.0" />
+    </edge>
+    <edge source="\app\api\modules\v1\models\BOOTHMODEL" target="\app\api\models\EventBooth">
+      <point x="0.0" y="-26.0" />
+      <point x="0.0" y="70.0" />
+    </edge>
+    <edge source="\app\api\modules\v1\models\USERMODEL" target="\app\api\models\User">
+      <point x="0.0" y="-48.0" />
+      <point x="0.0" y="70.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="52.5" y="315.5" />
+  <SelectedNodes>
+    <node>\app\api\modules\v1\models\COMPANYMODEL</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <VISIBILITY>public</VISIBILITY>
+</Diagram>
+
