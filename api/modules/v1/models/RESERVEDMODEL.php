@@ -10,8 +10,11 @@ namespace app\api\modules\v1\models;
 
 
 use app\api\models\ReservedBooth;
+use yii\helpers\Url;
+use yii\web\Link;
+use yii\web\Linkable;
 
-class RESERVEDMODEL extends ReservedBooth
+class RESERVEDMODEL extends ReservedBooth implements Linkable
 {
     public $reserved_by;
     public $booth_name;
@@ -31,4 +34,16 @@ class RESERVEDMODEL extends ReservedBooth
             },
         ];
     }
+
+
+     public function getLinks()
+     {
+         return [
+             Link::REL_SELF => Url::to(['user/view', 'id' => $this->reserved_booth_id], true),
+             'edit' => Url::to(['users', 'id' => $this->reserved_booth_id], true),
+             'profile' => Url::to(['user/profile/view', 'id' => $this->reserved_booth_id], true),
+             'index' => Url::to(['users'], true),
+         ];
+     }
+
 }
