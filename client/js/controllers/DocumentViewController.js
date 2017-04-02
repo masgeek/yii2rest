@@ -5,7 +5,13 @@
 
 //var app = angular.module('app.controllers', []);
 
-app.controller('DocumentViewController', function ($scope, $stateParams, $timeout, Upload, Booth) {
+app.controller('DocumentViewController', function ($scope,$http, $stateParams, $timeout, Upload, Summary, Reserve) {
+    $scope.summary = Summary.get({id: $stateParams.id}, function () {
+        console.log($scope.summary.reserved_booth_id);
+        //noe get the reseved booth update instance
+    });
+
+
     $scope.$watch('files', function () {
         $scope.upload($scope.files);
     });
@@ -46,10 +52,28 @@ app.controller('DocumentViewController', function ($scope, $stateParams, $timeou
         }
     };
 
-    $scope.confirmReservation = function ($event_booth_id) {
+    $scope.confirmReservation = function ($reserved_booth_id) {
+        /*$scope.reserve = Reserve.get({id: $reserved_booth_id}, function () {
+         //console.log($scope.reserve);
+         //noe get the reseved booth update instance
+         $scope.reserve.reserved = 1;
+         $scope.reserve.$update(function ($resp) {
+         console.log($resp);
+         });
+         });*/
+
+        //Let's first get the user and then update it.
+        var user = Reserve.get({id: 17}, function () {
+            user.reserved = false;
+            user.$update(function () {
+                console.log('Updating user with id 2');
+            });
+        });
+
         //first close the modal dialog that was open
-        ngDialog.close();
+        //ngDialog.close();
         //next redirected to the view we are interested in
-        $state.go('registerUser', {id: $event_booth_id}); // on success go back to home i.e. products state.
+        //$state.go('registerUser', {id: $event_booth_id}); // on success go back to home i.e. products state.
+        console.log($reserved_booth_id);
     };
 });

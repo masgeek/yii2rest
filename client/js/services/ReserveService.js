@@ -11,8 +11,9 @@ app.factory('User', function ($resource) {
     });
 });
 
-app.factory('Reserve', function ($resource) {
-    return $resource('../api/v1/reserves/:id', {id: '@id'}, {
+
+angular.module('app.services', []).factory('Reserve', function($resource) {
+    return $resource('../api/v1/reserves/:id', { id: '@id' }, {
         update: {
             method: 'PUT'
         }
@@ -20,7 +21,7 @@ app.factory('Reserve', function ($resource) {
 });
 
 app.factory('Summary', function ($resource) {
-    return $resource('../api/v1/reserves/:id', {id: '@id'}, {
+    return $resource('../api/v1/reserves/summary/:id', {id: '@id'}, {
         update: {
             method: 'PUT'
         }
