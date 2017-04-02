@@ -14,7 +14,7 @@ use Yii;
  *
  * @property Company $company
  */
-class Uploads extends \yii\db\ActiveRecord
+class Uploads extends Company
 {
     /**
      * @inheritdoc

@@ -19,7 +19,7 @@ use Yii;
  * @property User $user
  * @property Uploads[] $uploads
  */
-class Company extends \yii\db\ActiveRecord
+class Company extends ReservedBooth
 {
     /**
      * @inheritdoc

@@ -17,7 +17,7 @@ use Yii;
  *
  * @property EventBooth[] $eventBooths
  */
-class Event extends \yii\db\ActiveRecord
+class Event extends EventBooth
 {
     /**
      * @inheritdoc
