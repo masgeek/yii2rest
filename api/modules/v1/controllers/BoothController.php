@@ -13,7 +13,7 @@ use app\api\modules\v1\models\BOOTHMODEL;
 use yii\data\ActiveDataProvider;
 use yii\rest\ActiveController;
 
-class BoothController extends BOOTHMODEL
+class BoothController extends ActiveController
 {
     public $modelClass = 'app\api\modules\v1\models\BOOTHMODEL';
 

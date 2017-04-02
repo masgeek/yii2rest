@@ -11,7 +11,7 @@ namespace app\api\modules\v1\controllers;
 
 use yii\rest\ActiveController;
 
-class UserController extends USERMODEL
+class UserController extends ActiveController
 {
     public $modelClass = 'app\api\modules\v1\models\USERMODEL';
 }

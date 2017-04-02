@@ -12,7 +12,7 @@ namespace app\api\modules\v1\controllers;
 use app\api\models\VwReserveSummary;
 use yii\rest\ActiveController;
 
-class ReserveController extends RESERVEDMODEL
+class ReserveController extends ActiveController
 {
     public $modelClass = 'app\api\modules\v1\models\RESERVEDMODEL';
 

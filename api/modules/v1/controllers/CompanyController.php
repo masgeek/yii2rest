@@ -13,7 +13,7 @@ use Yii;
 use yii\rest\ActiveController;
 use yii\web\UploadedFile;
 
-class CompanyController extends COMPANYMODEL
+class CompanyController extends ActiveController
 {
     public $modelClass = 'app\api\modules\v1\models\COMPANYMODEL';
 

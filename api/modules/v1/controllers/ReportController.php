@@ -15,7 +15,7 @@ use yii\rest\ActiveController;
  * Class ReportController
  * @package app\api\modules\v1\controllers
  */
-class ReportController extends VwStandSummary
+class ReportController extends ActiveController
 {
     public $modelClass = 'app\api\models\VwStandSummary';
 }

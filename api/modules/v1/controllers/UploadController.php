@@ -13,7 +13,7 @@ use app\api\modules\v1\models\UPLOADSMODEL;
 use yii\rest\ActiveController;
 use yii\web\UploadedFile;
 
-class UploadController extends UPLOADSMODEL
+class UploadController extends ActiveController
 {
     public $modelClass = 'app\api\modules\v1\models\UPLOADSMODEL';
 
