@@ -13,7 +13,7 @@ use app\api\modules\v1\models\UPLOADSMODEL;
 use yii\rest\ActiveController;
 use yii\web\UploadedFile;
 
-class UploadController extends ActiveController
+class UploadController extends UPLOADSMODEL
 {
     public $modelClass = 'app\api\modules\v1\models\UPLOADSMODEL';
 
@@ -34,6 +34,6 @@ class UploadController extends ActiveController
             $output = ['error' => 'No files were processed.'];
         }
         // return a json encoded response for plugin to process successfully
-        return json_encode($output);
+        return $output;
     }
 }
