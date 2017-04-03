@@ -9,6 +9,7 @@ use Yii;
  *
  * @property int $event_id
  * @property string $event_name
+ * @property string $event_country
  * @property string $event_location City of the event
  * @property string $event_start_date
  * @property string $event_end_date
@@ -17,7 +18,7 @@ use Yii;
  *
  * @property EventBooth[] $eventBooths
  */
-class Event extends EventBooth
+class Event extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
@@ -33,10 +34,10 @@ class Event extends EventBooth
     public function rules()
     {
         return [
-            [['event_name', 'event_location', 'event_lat', 'event_long'], 'required'],
+            [['event_name', 'event_country', 'event_location', 'event_start_date', 'event_end_date', 'event_lat', 'event_long'], 'required'],
             [['event_start_date', 'event_end_date'], 'safe'],
             [['event_lat', 'event_long'], 'number'],
-            [['event_name', 'event_location'], 'string', 'max' => 50],
+            [['event_name', 'event_country', 'event_location'], 'string', 'max' => 50],
         ];
     }
 
@@ -48,6 +49,7 @@ class Event extends EventBooth
         return [
             'event_id' => 'Event ID',
             'event_name' => 'Event Name',
+            'event_country' => 'Event Country',
             'event_location' => 'Event Location',
             'event_start_date' => 'Event Start Date',
             'event_end_date' => 'Event End Date',

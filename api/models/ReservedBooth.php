@@ -15,7 +15,7 @@ use Yii;
  * @property EventBooth $eventBooth
  * @property User $user
  */
-class ReservedBooth extends EventBooth
+class ReservedBooth extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc

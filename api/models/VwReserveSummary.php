@@ -16,7 +16,7 @@ use Yii;
  * @property int $event_booth_id
  * @property int $event_id
  */
-class VwReserveSummary extends ReserveController
+class VwReserveSummary extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc

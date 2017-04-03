@@ -40,7 +40,7 @@ class VwStandSummary extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['event_location', 'event_booth_name', 'booth_image', 'full_names', 'user_email', 'company_name', 'company_admin', 'company_email', 'phone', 'address', 'logo_path', 'event_name'], 'required'],
+            [['event_location', 'event_start_date', 'event_end_date', 'event_booth_name', 'booth_image', 'full_names', 'user_email', 'company_name', 'company_admin', 'company_email', 'phone', 'address', 'logo_path', 'event_name'], 'required'],
             [['event_start_date', 'event_end_date'], 'safe'],
             [['booth_price'], 'number'],
             [['description', 'address'], 'string'],

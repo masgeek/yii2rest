@@ -14,7 +14,7 @@ use Yii;
  * @property Company[] $companies
  * @property ReservedBooth[] $reservedBooths
  */
-class User extends ReservedBooth
+class User extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
