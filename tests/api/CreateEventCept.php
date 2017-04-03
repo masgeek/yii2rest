@@ -14,7 +14,6 @@ $I->wantTo('create an event via API');
 //$I->amHttpAuthenticated('service_user', '123456');
 $I->haveHttpHeader('Content-Type', 'application/x-www-form-urlencoded');
 $I->sendPOST('/events', $event_info);
-//$I->sendGET('/events');
 
 
 $resp = $I->grabResponse(); //grab the response
@@ -25,9 +24,19 @@ $event_id = $decoded->event_id;
 
 $I->seeResponseCodeIs(\Codeception\Util\HttpCode::CREATED); // 201
 $I->seeResponseIsJson();
-$I->seeResponseContainsJson(['event_name' => 'Test Event']);
-
-
+//$I->seeResponseContainsJson(['event_name' => 'Test Event']);
+$I->seeResponseMatchesJsonType([
+    'event_id'=>'integer',
+    'event_name' => 'string',
+    'event_country' => 'string',
+    'event_location' => 'string',
+    'event_start_date' => 'string',
+    'event_end_date' => 'string',
+    //'event_lat' => 'decimal',
+    //'event_long' => 'int'
+]);
+/*
+exit();
 //next create the booth
 $event_booth_info = [
     'event_id' => $event_id,
@@ -37,6 +46,7 @@ $event_booth_info = [
     'description' => 'Testing booth test'
 ];
 
+
 $I->wantTo('create an event booth via API');
 $I->haveHttpHeader('Content-Type', 'application/x-www-form-urlencoded');
 $I->sendPOST('/booths', $event_booth_info);
@@ -45,4 +55,4 @@ $resp = $I->grabResponse(); //grab the response
 
 $I->seeResponseCodeIs(\Codeception\Util\HttpCode::CREATED); // 201
 $I->seeResponseIsJson();
-$I->seeResponseContainsJson(['event_id' => $event_id]);
+$I->seeResponseContainsJson(['event_id' => $event_id]);*/
