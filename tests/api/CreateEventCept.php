@@ -35,8 +35,7 @@ $I->seeResponseMatchesJsonType([
     //'event_lat' => 'decimal',
     //'event_long' => 'int'
 ]);
-/*
-exit();
+
 //next create the booth
 $event_booth_info = [
     'event_id' => $event_id,
@@ -55,4 +54,4 @@ $resp = $I->grabResponse(); //grab the response
 
 $I->seeResponseCodeIs(\Codeception\Util\HttpCode::CREATED); // 201
 $I->seeResponseIsJson();
-$I->seeResponseContainsJson(['event_id' => $event_id]);*/
+$I->seeResponseContainsJson(['event_id' => $event_id]);

@@ -3,7 +3,7 @@ $I = new ApiTester($scenario);
 
 $user_info = [
     'full_names' => 'Test Event',
-    'email' => 'email@mail.com',];
+    'email' => uniqid() . '@mail.com',];
 
 $I->wantTo('create a user');
 //$I->amHttpAuthenticated('service_user', '123456');

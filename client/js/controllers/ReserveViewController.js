@@ -9,6 +9,7 @@ app.controller('ReserveViewController', function ($scope, $state, $timeout, $sta
     $scope.user = new User();
     $scope.reserve = new Reserve();  //create new reservation instance. Properties will be set via ng-model on UI
     $scope.company = new Company();
+    $scope.saved = false;
     //$scope.docupload = new DocumentUpload();
 
 
@@ -30,6 +31,7 @@ app.controller('ReserveViewController', function ($scope, $state, $timeout, $sta
                         $scope.reserve.$save().then(function (resp) {
                             //redirect back to the events map
                             // $state.go('events');
+                            $scope.saved = true;
                         });
                     })
                     .catch(function (error) {

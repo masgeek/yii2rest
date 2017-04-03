@@ -44,7 +44,7 @@
             <span class="help-block">Company Phone</span>
         </div>
         <div class="col-md-4">
-            <input id="logo" ng-model="company.logo_path" type="text" class="form-control" required=""
+            <input id="logo" ng-model="company.logo_path" type="text" class="form-control hidden" required=""
                    autocomplete="off">
             <button class="btn btn-success btn-block" ngf-select="logoUpload($files)" ngf-multiple="false"
                     accept="image/*" ngf-pattern="'image/*'">Upload Logo
@@ -64,12 +64,12 @@
 </fieldset>
 <div class="form-group">
     <div class="col-md-10 col-md-offset-1">
-        <input type="submit" class="btn btn-primary btn-block" value="Register"/>
+        <input type="submit" class="btn btn-primary btn-block" value="Register" ng-if="saved==false"/>
     </div>
 </div>
 
 
-<a class="btn btn-primary btn-block" ui-sref="uploadDocument({id:company.company_id})">Upload Documents</a>
+<a class="btn btn-success btn-block" ui-sref="uploadDocument({id:company.company_id})" ng-if="saved==true">Upload Documents</a>
 
 
 <ul class="list-group">

@@ -3,7 +3,6 @@
  */
 'use strict'
 
-//var app = angular.module('app.controllers', []);
 
 app.controller('BoothViewController', function ($scope, $state, $stateParams, Booth, EventBooth, ngDialog) {
     $scope.event_view = EventBooth.get({id: $stateParams.id}); //Get a single product. Issues a GET to /api/products/:id
