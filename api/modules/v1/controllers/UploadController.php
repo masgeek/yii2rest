@@ -13,10 +13,21 @@ use app\api\modules\v1\models\UPLOADSMODEL;
 use yii\rest\ActiveController;
 use yii\web\UploadedFile;
 
+/**
+ * Class UploadController
+ * @package app\api\modules\v1\controllers
+ */
 class UploadController extends ActiveController
 {
+    /**
+     * @var string
+     */
     public $modelClass = 'app\api\modules\v1\models\UPLOADSMODEL';
 
+    /**
+     * endpoint for uploading the marketing documents
+     * @return array
+     */
     public function actionDocument()
     {
         $output = []; //empty if successful

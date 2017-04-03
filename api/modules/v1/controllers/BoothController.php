@@ -13,10 +13,22 @@ use app\api\modules\v1\models\BOOTHMODEL;
 use yii\data\ActiveDataProvider;
 use yii\rest\ActiveController;
 
+/**
+ * Class BoothController
+ * @package app\api\modules\v1\controllers
+ */
 class BoothController extends ActiveController
 {
+    /**
+     * @var string
+     */
     public $modelClass = 'app\api\modules\v1\models\BOOTHMODEL';
 
+    /**
+     * Get all booths under a particular event
+     * @param $id
+     * @return array|\yii\db\ActiveRecord[]
+     */
     public function actionAll($id)
     {
         $data = BOOTHMODEL::find()

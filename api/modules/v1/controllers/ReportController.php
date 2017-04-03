@@ -17,5 +17,8 @@ use yii\rest\ActiveController;
  */
 class ReportController extends ActiveController
 {
+    /**
+     * @var string
+     */
     public $modelClass = 'app\api\models\VwStandSummary';
 }

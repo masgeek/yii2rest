@@ -13,10 +13,21 @@ use Yii;
 use yii\rest\ActiveController;
 use yii\web\UploadedFile;
 
+/**
+ * Class CompanyController
+ * @package app\api\modules\v1\controllers
+ */
 class CompanyController extends ActiveController
 {
+    /**
+     * @var string
+     */
     public $modelClass = 'app\api\modules\v1\models\COMPANYMODEL';
 
+    /**
+     * Endpoint for uploading the company logo
+     * @return array
+     */
     public function actionLogo()
     {
         //upload the company logo
@@ -33,8 +44,8 @@ class CompanyController extends ActiveController
 
             $output = ['file_path' => $t];
         }
-        // return a json encoded response for plugin to process successfully
-        return $output;
+
+        return $output; //return as array, it is encoded to json automatically
     }
 
 

@@ -10,7 +10,14 @@ namespace app\api\modules\v1\controllers;
 
 use yii\rest\ActiveController;
 
+/**
+ * Class EventController
+ * @package app\api\modules\v1\controllers
+ */
 class EventController extends ActiveController
 {
+    /**
+     * @var string
+     */
     public $modelClass = 'app\api\modules\v1\models\EVENTMODEL';
 }
