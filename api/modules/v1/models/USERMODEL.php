@@ -28,6 +28,10 @@ class USERMODEL extends User //implements Linkable
         ];
     }
 
+    /**
+     * Define fields and objects to be returned in the API response
+     * @return array
+     */
     public function fields()
     {
         return [
@@ -42,11 +46,14 @@ class USERMODEL extends User //implements Linkable
         ];
     }
 
-    //add option to return linked data
+    /**
+     * Allows the definition of extra fields
+     * /users/1?expand=usercCmpanies
+     * @return array
+     */
     public function extraFields()
     {
         return ['userCompanies'];
-        //return ['userCompanies'];
     }
 
     /*

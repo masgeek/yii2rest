@@ -17,8 +17,9 @@ class UPLOADSMODEL extends Uploads
 {
     public $imageFiles;
 
-    /*
-     * @ingeritdoc
+    /**
+     * Define fields and objects to be returned in the API response
+     * @return array
      */
     public function fields()
     {

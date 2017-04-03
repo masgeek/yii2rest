@@ -19,6 +19,10 @@ class RESERVEDMODEL extends ReservedBooth //implements Linkable
     public $reserved_by;
     public $booth_name;
 
+    /**
+     * Define fields and objects to be returned in the API response
+     * @return array
+     */
     public function fields()
     {
         return [
