@@ -13,6 +13,20 @@ use app\api\models\Event;
 
 class EVENTMODEL extends Event
 {
+
+    /**
+     * @inheritdoc
+     */
+    public function rules()
+    {
+        return [
+            [['event_name', 'event_country', 'event_location', 'event_start_date', 'event_end_date', 'event_lat', 'event_long'], 'required'],
+            [['event_start_date', 'event_end_date'], 'safe'],
+            [['event_lat', 'event_long'], 'number'],
+            [['event_name', 'event_country', 'event_location'], 'string', 'max' => 50],
+        ];
+    }
+
     public function fields()
     {
         return [
