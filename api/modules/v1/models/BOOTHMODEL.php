@@ -19,6 +19,10 @@ class BOOTHMODEL extends EventBooth
     public $reserved_by;
     public $company;
 
+    /**
+     * Define fields and objects to be returned in the API response
+     * @return array
+     */
     public function fields()
     {
         return [

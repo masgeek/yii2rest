@@ -32,6 +32,7 @@ class User extends \yii\db\ActiveRecord
         return [
             [['full_names', 'email'], 'required'],
             [['full_names', 'email'], 'string', 'max' => 30],
+            [['email'], 'unique'],
         ];
     }
 

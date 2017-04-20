@@ -8,6 +8,7 @@ var app = angular.module('app', [
     'ngRoute',      //$routeProvider
     'angularCSS', //Allows loading of view spcific CSS files
     'ngDialog',//alows us to implement a popup fdialog
+    'ngFileUpload',//allows for file uploading
     'mgcrea.ngStrap',//bs-navbar, data-match-route directives
     'ui.router',
     'app.services',
@@ -29,10 +30,14 @@ app.config(function ($stateProvider) {
         url: '/events/:id/reserve',
         templateUrl: 'partials/reserve-booth.html',
         controller: 'ReserveViewController'
-    }).state('editProduct', { //state for updating a movie
-        url: '/product/:id/edit',
-        templateUrl: 'partials/product-edit.html',
-        controller: 'ProductEditController'
+    }).state('uploadDocument', { //state for updating a movie
+        url: '/events/:id/document',
+        templateUrl: 'partials/file-upload.html',
+        controller: 'DocumentViewController'
+    }).state('boothSummary', {
+        url: '/events/:event_id/:booth_id/boothview',
+        templateUrl: 'partials/booth-summary.html',
+        controller: 'BoothDetailViewController'
     });
 }).run(function ($state) {
     $state.go('events'); //make a transition to products state when app starts

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>PHP</ID>
+  <OriginalElement>\app\api\modules\v1\module</OriginalElement>
+  <nodes>
+    <node x="789.4305555555555" y="1189.5">\app\api\modules\v1\models\USERMODEL</node>
+    <node x="222.93055555555554" y="1167.0">\app\api\modules\v1\models\COMPANYMODEL</node>
+    <node x="420.93055555555554" y="444.0">\app\api\modules\v1\models\BOOTHMODEL</node>
+    <node x="1033.9305555555557" y="844.0">\app\api\modules\v1\models\RESERVEDMODEL</node>
+    <node x="707.4305555555555" y="378.0">\app\api\models\ReservedBooth</node>
+    <node x="445.93055555555554" y="1123.0">\app\api\models\Uploads</node>
+    <node x="709.9305555555555" y="767.0">\app\api\models\User</node>
+    <node x="0.0" y="367.0">\app\api\models\Event</node>
+    <node x="341.43055555555554" y="0.0">\app\api\models\EventBooth</node>
+    <node x="520.9305555555555" y="1402.0">\app\api\modules\v1\models\UPLOADSMODEL</node>
+    <node x="118.5" y="866.5">\app\api\modules\v1\models\EVENTMODEL</node>
+    <node x="267.43055555555554" y="712.0">\app\api\models\Company</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="\app\api\models\Event" target="\app\api\models\EventBooth">
+      <point x="0.0" y="-147.5" />
+      <point x="168.0" y="342.0" />
+      <point x="400.7638888888888" y="342.0" />
+      <point x="-118.66666666666669" y="158.5" />
+    </edge>
+    <edge source="\app\api\models\ReservedBooth" target="\app\api\models\EventBooth">
+      <point x="0.0" y="-136.5" />
+      <point x="861.9305555555555" y="342.0" />
+      <point x="638.0972222222222" y="342.0" />
+      <point x="118.66666666666663" y="158.5" />
+    </edge>
+    <edge source="\app\api\modules\v1\models\COMPANYMODEL" target="\app\api\models\Company">
+      <point x="0.0" y="-70.5" />
+      <point x="324.43055555555554" y="1098.0" />
+      <point x="365.43055555555554" y="1098.0" />
+      <point x="-98.0" y="180.5" />
+    </edge>
+    <edge source="\app\api\modules\v1\models\UPLOADSMODEL" target="\app\api\models\Uploads">
+      <point x="0.0" y="-48.5" />
+      <point x="0.0" y="114.5" />
+    </edge>
+    <edge source="\app\api\modules\v1\models\BOOTHMODEL" target="\app\api\models\EventBooth">
+      <point x="0.0" y="-70.5" />
+      <point x="0.0" y="158.5" />
+    </edge>
+    <edge source="\app\api\models\Uploads" target="\app\api\models\Company">
+      <point x="0.0" y="-114.5" />
+      <point x="602.4305555555555" y="1098.0" />
+      <point x="561.4305555555555" y="1098.0" />
+      <point x="98.0" y="180.5" />
+    </edge>
+    <edge source="\app\api\modules\v1\models\USERMODEL" target="\app\api\models\User">
+      <point x="0.0" y="-48.0" />
+      <point x="0.0" y="125.5" />
+    </edge>
+    <edge source="\app\api\modules\v1\models\RESERVEDMODEL" target="\app\api\models\ReservedBooth">
+      <point x="0.0" y="-48.5" />
+      <point x="1120.9305555555557" y="687.0" />
+      <point x="964.9305555555555" y="687.0" />
+      <point x="103.0" y="136.5" />
+    </edge>
+    <edge source="\app\api\modules\v1\models\EVENTMODEL" target="\app\api\models\Event">
+      <point x="0.0" y="-26.0" />
+      <point x="0.0" y="147.5" />
+    </edge>
+    <edge source="\app\api\models\User" target="\app\api\models\ReservedBooth">
+      <point x="0.0" y="-125.5" />
+      <point x="0.0" y="136.5" />
+    </edge>
+    <edge source="\app\api\models\Company" target="\app\api\models\ReservedBooth">
+      <point x="0.0" y="-180.5" />
+      <point x="463.43055555555554" y="687.0" />
+      <point x="758.9305555555555" y="687.0" />
+      <point x="-103.0" y="136.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="1126.5" y="1063.0" />
+  <SelectedNodes>
+    <node>\app\api\models\Event</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Methods</Category>
+    <Category>Fields</Category>
+  </Categories>
+  <VISIBILITY>public</VISIBILITY>
+</Diagram>
+

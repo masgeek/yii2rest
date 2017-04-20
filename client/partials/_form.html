@@ -1,31 +1,77 @@
+<fieldset>
+    <!-- Form Name -->
+    <legend>Event Registration</legend>
+
+    <!-- Text input-->
+    <div class="form-group">
+        <div class="col-md-6">
+            <input id="username" ng-model="user.full_names" type="text" placeholder="Full Names" class="form-control"
+                   required="">
+            <span class="help-block">Full Names</span>
+        </div>
+        <div class="col-md-6">
+            <input id="user_email" ng-model="user.email" type="email" placeholder="Email Address" class="form-control"
+                   required>
+            <span class="help-block">Email Address</span>
+        </div>
+    </div>
+
+
+    <legend>Company Details</legend>
+    <div class="form-group">
+        <div class="col-md-6">
+            <input id="company_name" ng-model="company.company_name" type="text" placeholder="Company Name"
+                   class="form-control" required="">
+            <span class="help-block">Company Name</span>
+        </div>
+        <div class="col-md-6">
+            <input id="company_admin" ng-model="company.company_admin" type="text" placeholder="Company Administrator"
+                   class="form-control" required="">
+            <span class="help-block">Company Administrator</span>
+        </div>
+    </div>
+    <hr/>
+    <div class="form-group">
+        <div class="col-md-4">
+            <input id="company_email" ng-model="company.email" type="email" placeholder="Company Email"
+                   class="form-control"
+                   required="">
+            <span class="help-block">Company Email</span>
+        </div>
+        <div class="col-md-4">
+            <input id="phone" ng-model="company.phone" type="text" placeholder="Company Phone" class="form-control"
+                   required="">
+            <span class="help-block">Company Phone</span>
+        </div>
+        <div class="col-md-4">
+            <input id="logo" ng-model="company.logo_path" type="text" class="form-control hidden" required=""
+                   autocomplete="off">
+            <button class="btn btn-success btn-block" ngf-select="logoUpload($files)" ngf-multiple="false"
+                    accept="image/*" ngf-pattern="'image/*'">Upload Logo
+            </button>
+            <span class="help-block">Company Logo</span>
+            <div>{{log}}</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-12">
+            <textarea class="form-control" id="address" ng-model="company.address"></textarea>
+            <span class="help-block">Company Address</span>
+        </div>
+    </div>
+
+</fieldset>
 <div class="form-group">
-    <label for="title" class="col-sm-2 control-label">Title</label>
-    <div class="col-sm-10">
-        <input type="text" ng-model="product.product_name" class="form-control" id="title" placeholder="Movie Title Here"/>
+    <div class="col-md-10 col-md-offset-1">
+        <input type="submit" class="btn btn-primary btn-block" value="Register" ng-if="saved==false"/>
     </div>
 </div>
-<div class="form-group">
-    <label for="year" class="col-sm-2 control-label">Release Year</label>
-    <div class="col-sm-10">
-        <input type="text" ng-model="product.country" class="form-control" id="year"
-               placeholder="When was the movie released?"/>
-    </div>
-</div>
-<div class="form-group">
-    <label for="director" class="col-sm-2 control-label">Director</label>
-    <div class="col-sm-10">
-        <input type="text" ng-model="product.warehouse" class="form-control" id="director"
-               placeholder="Who directed the movie?"/>
-    </div>
-</div>
-<div class="form-group">
-    <label for="plot" class="col-sm-2 control-label">Movie Genre</label>
-    <div class="col-sm-10">
-        <input type="text" ng-model="product.id" class="form-control" id="plot" placeholder="Movie genre here"/>
-    </div>
-</div>
-<div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-        <input type="submit" class="btn btn-primary" value="Save"/>
-    </div>
-</div>
+
+
+<a class="btn btn-success btn-block" ui-sref="uploadDocument({id:company.company_id})" ng-if="saved==true">Upload Documents</a>
+
+
+<ul class="list-group">
+    <li class="list-group-item list-group-item-danger" ng-repeat="error in save_message">{{error.message}}</li>
+</ul>

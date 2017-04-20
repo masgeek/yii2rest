@@ -16,9 +16,22 @@ use yii\web\Linkable;
 
 class USERMODEL extends User //implements Linkable
 {
-//* @property ReservedBooth[] $reservedBooths
-//* @property UserCompany[] $userCompanies
+    /**
+     * @inheritdoc
+     */
+    public function rules()
+    {
+        return [
+            [['full_names', 'email'], 'required'],
+            [['full_names', 'email'], 'string', 'max' => 30],
+            [['email'], 'unique'],
+        ];
+    }
 
+    /**
+     * Define fields and objects to be returned in the API response
+     * @return array
+     */
     public function fields()
     {
         return [
@@ -28,19 +41,19 @@ class USERMODEL extends User //implements Linkable
             'email',
             'company' => function ($model) {
                 /* @var $this $model */
-                return $model->userCompanies;
+                return $model->companies;
             },
-            /*'booths' => function ($model) {
-                return $model->reservedBooths;
-            },*/
         ];
     }
 
-    //add option to return linked data
+    /**
+     * Allows the definition of extra fields
+     * /users/1?expand=usercCmpanies
+     * @return array
+     */
     public function extraFields()
     {
         return ['userCompanies'];
-        //return ['userCompanies'];
     }
 
     /*

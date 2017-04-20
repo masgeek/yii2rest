@@ -23,6 +23,7 @@
 </table>
 -->
 
+<!-- uploaded documents -->
 <div class="row">
     <div class="col-md-4" ng-repeat-start="booth in event_view">
         <div class="panel-group">
@@ -35,7 +36,8 @@
                 </div>
                 <div class="panel-body">
                     <div class="col-md-12">
-                        <img ng-if="booth.reserved==true" ng-src="{{booth.company.logo_path}}" class="img img-responsive"/>
+                        <img ng-if="booth.reserved==true" ng-src="{{'..'+booth.company.logo_path}}"
+                             class="img img-responsive"/>
 
                         <!-- only the unbooked booths will open the modal view -->
                         <a href="" ng-click="openDefault(booth.event_booth_id)" ng-if="booth.reserved==false">
@@ -47,7 +49,7 @@
             <!-- panel for showing company details -->
             <div class="panel panel-primary" ng-if="booth.reserved==true">
                 <div class="panel-heading">
-                    <h4 class="panel-title">Booked UserDetails</h4>
+                    <h4 class="panel-title">Booked User Details</h4>
                 </div>
                 <div id="collapse{{booth.event_booth_id}}">
                     <div class="panel-footer">
@@ -59,6 +61,13 @@
                         <address>{{booth.company.address}}</address>
                     </div>
                 </div>
+
+                <div class="list-group-" ng-repeat="document in booth.company.uploads">
+                    <a class="list-group-item" target="_self" href="{{'..'+document.document_path}}"
+                       download="{{document.document_name}}">Download Document {{document.document_name}} <span
+                            class="glyphicon glyphicon-download-alt pull-right"></span></a>
+                </div>
+
             </div>
         </div>
     </div>

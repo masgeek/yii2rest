@@ -61,6 +61,7 @@ $config = [
                         'v1/upload',
                         'v1/user',
                         'v1/company',
+                        'v1/report',
                     ],
                     //'GET,HEAD <id:\d+>/booth' => 'booth/all-booths',
                     'tokens' => [
@@ -72,6 +73,10 @@ $config = [
                         'GET users' => 'citizens',
                         //'GET all-booths' => 'all-booths',
                         'GET all/{id}' => 'all',
+                        'GET summary/{id}' => 'summary',
+                        //post actions
+                        'POST document' => 'document',
+                        'POST logo' => 'logo',
                     ],
                 ],
             ],
